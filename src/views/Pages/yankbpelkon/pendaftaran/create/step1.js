@@ -212,11 +212,11 @@ class Step1 extends Component {
             this.setState({ blocking: false });
         }).catch((error) => {
             this.setState({ blocking: false });
-            Swal.fire({
-                title: 'Error',
-                icon: 'error',
-                text: 'Please Check Your Network Connection.',
-            });
+            // Swal.fire({
+            //     title: 'Error',
+            //     icon: 'error',
+            //     text: 'Please Check Your Network Connection.',
+            // });
         });
     }
 
