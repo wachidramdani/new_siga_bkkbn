@@ -45,62 +45,85 @@ class Pendaftaran extends Component {
             <div className="animated fadeIn">
                 <BlockUi tag="div" blocking={this.state.blocking}>
                     <Row>
-                        <Col xs="12" md="12">
+                        <Col xs="12" md="7">
                             <Card>
                                 <CardBody>
-                                    {/* <Form action="" method="post" encType="multipart/form-data" className="form-horizontal"> */}
-                                        <div className="divTitle">
-                                            <span className="spanTitle">&#8226; Pendaftaran Tempat Pelayanan KB</span>
-                                        </div>
-                                        <Row>
-                                            <Col md="12">
-                                                <Row>
-                                                    <Col xs="4" md="2 mb-2">
-                                                        <img src={location} alt=""  style={{width: '100%', height: '80px'}}/>
-                                                    </Col>
-                                                    <Col xs="8" md="4 mb-2">
-                                                        <Row>
-                                                            <Col xs="3">
-                                                                <Label className="labelForm" htmlFor="provinsi"><b>Provinsi</b></Label>
-                                                            </Col>
-                                                            <Col xs="9">
-                                                                <Label className="labelForm" htmlFor="provinsi">Aceh</Label>
-                                                            </Col>
-                                                            <Col xs="3">
-                                                                <Label className="labelForm" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
-                                                            </Col>
-                                                            <Col xs="9">
-                                                                <Label className="labelForm" htmlFor="provinsi">Aceh Besar</Label>
-                                                            </Col>
-                                                        </Row>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col xs="4">
-                                                <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Faskes</b> 15</Label>
-                                            </Col>
-                                            <Col xs="4">
-                                                <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Tenaga</b> 75</Label>
-                                            </Col>
-                                            <Col xs="4">
-                                                <Label className="labelForm" htmlFor="provinsi"><b>Update</b> 22/10/20</Label>
-                                            </Col>
-                                        </Row>
-                                        <Row className="mt-3">
-                                            <Col md="12">
-                                                <Row>
-                                                    <Col xs="6" md="4">
-                                                        <Button style={{width:'100%'}} className="btn btn-facebook btnFilter" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah</Button>
-                                                    </Col>
-                                                    <Col xs="6" md="4">
-                                                        <Button style={{width:'100%'}} className="btn btn-facebook btnFilter" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data</Button>
-                                                    </Col>
-                                                </Row>
-                                            </Col>
-                                        </Row>
-                                    {/* </Form> */}
+                                    <div className="divTitle">
+                                        <span className="spanTitle">&#8226; Pendaftaran Tempat Pelayanan KB</span>
+                                    </div>
+                                    <Row>
+                                        <Col md="12">
+                                            <Row>
+                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'0'}}>
+                                                    <img src={location} alt=""  style={{width: '100%', height: '120px'}}/>
+                                                </Col>
+                                                <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>
+                                                    <Row>
+                                                        <Col xs="3" md="2">
+                                                            <Label className="labelForm28" htmlFor="provinsi"><b>Provinsi</b></Label>
+                                                        </Col>
+                                                        <Col xs="9" md="10">
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh</Label>
+                                                        </Col>
+                                                        <Col xs="3" md="2">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
+                                                        </Col>
+                                                        <Col xs="9" md="10">
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh Besar</Label>
+                                                        </Col>
+                                                        <Col xs="3" md="2">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kode</b></Label>
+                                                        </Col>
+                                                        <Col xs="9" md="10">
+                                                            <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
+                                                        </Col>
+                                                    </Row>
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                    <Row className="mt-2">
+                                        <Col xs="6">
+                                            {/* <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Faskes</b> 15</Label> */}
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'22px', fontWeight: 'bold'}}>15</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Faskes</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                        <Col xs="6">
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'22px', fontWeight: 'bold'}}>75</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Tenaga</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                    <Row className="mt-3">
+                                        <Col md="12">
+                                            <Row>
+                                                <Col xs="6" md="6">
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Faskes</Button>
+                                                </Col>
+                                                <Col xs="6" md="6">
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Faskes</Button>
+                                                </Col>
+                                            </Row>
+                                        </Col>
+                                    </Row>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="5" className="d-none d-sm-block" style={{borderLeft:"1px solid #C8E2FF", height: "calc(100vh - 120px)"}}>
+                            <Card >
+                                <CardBody className="card-body-nopad">
+                                    Right Side
                                 </CardBody>
                             </Card>
                         </Col>
