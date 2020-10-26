@@ -15,7 +15,7 @@ export default {
             icon: 'icon-office',
         },
         {
-            name: 'Register Pelayanan KB',
+            name: 'Pendaftaran Pelayanan KB',
             url: '/register',
             icon: 'icon-man-woman',
         },

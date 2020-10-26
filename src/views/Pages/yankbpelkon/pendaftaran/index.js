@@ -59,22 +59,22 @@ class Pendaftaran extends Component {
                                                 </Col>
                                                 <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>
                                                     <Row>
-                                                        <Col xs="3" md="2">
+                                                        <Col xs="4" md="2">
                                                             <Label className="labelForm28" htmlFor="provinsi"><b>Provinsi</b></Label>
                                                         </Col>
-                                                        <Col xs="9" md="10">
+                                                        <Col xs="8" md="10">
                                                             <Label className="labelForm28" htmlFor="provinsi">Aceh</Label>
                                                         </Col>
-                                                        <Col xs="3" md="2">
+                                                        <Col xs="4" md="2">
                                                             <Label className="labelForm28" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
                                                         </Col>
-                                                        <Col xs="9" md="10">
+                                                        <Col xs="8" md="10">
                                                             <Label className="labelForm28" htmlFor="provinsi">Aceh Besar</Label>
                                                         </Col>
-                                                        <Col xs="3" md="2">
+                                                        <Col xs="4" md="2">
                                                             <Label className="labelForm28" htmlFor="kabupaten"><b>Kode</b></Label>
                                                         </Col>
-                                                        <Col xs="9" md="10">
+                                                        <Col xs="8" md="10">
                                                             <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
                                                         </Col>
                                                     </Row>
