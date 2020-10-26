@@ -1408,10 +1408,10 @@ class Step3 extends Component {
                     
                     <FormGroup>
                         <Row>
-                            <Col xs="6" md="2" style={{ marginTop: '15px' }} >
+                            <Col xs="6" md="3" style={{ marginTop: '15px' }} >
                                 <Label htmlFor="text-input">Nomor Induk Kependudukan (NIK)</Label>
                             </Col>
-                            <Col xs="4" md="5" style={{ marginTop: '15px' }}>
+                            <Col xs="4" md="4" style={{ marginTop: '15px' }}>
                                 <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                             </Col>
                             <Col xs="2" md="2" lg="1" style={{ marginTop: '15px' }}>
@@ -1422,26 +1422,26 @@ class Step3 extends Component {
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs="6" md="2" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
                                 <Label htmlFor="text-input">Nama</Label>
                             </Col>
-                            <Col xs="6" md="4" lg="6" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
                                 <Input type="text" value={this.state.namaPeserta} disabled/>
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs="6" md="2" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
                                 <Label htmlFor="text-input">Alamat</Label>
                             </Col>
-                            <Col xs="6" md="4" lg="6" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
                                 <Input type="text" value={this.state.alamat} disabled/>
                             </Col>
                         </Row>
                         <Row>
-                            <Col xs="6" md="2" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
                                 <Label htmlFor="text-input">No. Handphone</Label>
                             </Col>
-                            <Col xs="6" md="4" lg="6" style={{ marginTop: '15px' }}>
+                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
                                 <Input type="number" value={this.state.noHp} disabled/>
                             </Col>
                         </Row>
@@ -1449,7 +1449,7 @@ class Step3 extends Component {
                     </FormGroup>
 
                     <FormGroup row>
-                        <Col xs="6" md="2" lg="2">
+                        <Col xs="6" md="3" lg="2">
                             <Label htmlFor="text-input">Profesi</Label>
                         </Col>
                         <Col  xs="6" md="6" lg="6">

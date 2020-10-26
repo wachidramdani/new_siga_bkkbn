@@ -127,7 +127,7 @@ class Daftar extends Component {
             showCancelButton: true,
         }).then((result) => {
             if (result.value) {       
-                this.props.history.push('/pendaftaran');
+                this.props.history.push('/register');
             }
         });
     }
