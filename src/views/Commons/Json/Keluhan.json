@@ -1,0 +1,9 @@
+[
+    { "value": "Pasca Persalinan", "label": "Pasca Persalinan", "kd_jk": "Informed Consent" },
+    { "value": "Pasca Peguguran", "label": "Pasca Keguguran", "kd_jk": "Informed Consent" },
+
+    { "value": "Pasca Persalinan", "label": "Pasca Persalinan", "kd_jk": "Tanpa Informed Consent" },
+    { "value": "Pasca Peguguran", "label": "Pasca Keguguran", "kd_jk": "Tanpa Informed Consent" },
+    { "value": "Komplikasi Berat", "label": "Komplikasi Berat", "kd_jk": "Tanpa Informed Consent" },
+    { "value": "Kegagalan", "label": "Kegagalan", "kd_jk": "Tanpa Informed Consent" }
+]
