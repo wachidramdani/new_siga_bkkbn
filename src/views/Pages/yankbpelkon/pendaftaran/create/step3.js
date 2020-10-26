@@ -253,7 +253,7 @@ class Step3 extends Component {
                 dt4: this.state.currentProfesi.label,
                 dt5: this.state.data_checkbox.map(item => [item, ', '])
             }],
-            show_checkbox: [], nikPeserta: null, namaPeserta: '', currentProfesi: [], data_checkbox: [],
+            show_checkbox: [], nikPeserta: null, namaPeserta: '', alamat: '', noHp: '', currentProfesi: [], setPelatihan: [], data_checkbox: [],
         })
         document.getElementById('input-nik').value = ''
     }
@@ -979,6 +979,14 @@ class Step3 extends Component {
         this.props.nextStep();
     }
 
+    getNIK = () => {
+        this.setState({
+            namaPeserta: 'Mawar Melati',
+            alamat: 'Jalan Merdeka No. 81',
+            noHp: '081982902500'
+        })
+    }
+
     render() {
 
         // console.log(" Data Penduduk : "+this.state.dataPenduduk)
@@ -1402,88 +1410,70 @@ class Step3 extends Component {
         
         return (
             <div>
-                {/* <h6> III. TENAGA </h6> */}
-                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '0px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
+                <h6> III. TENAGA </h6>
+                <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '-25px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
                 <CardBody style={{ padding: '10px 0' }}>
-                    
-                    <FormGroup>
-                        <Row>
-                            <Col xs="6" md="3" style={{ marginTop: '15px' }} >
-                                <Label htmlFor="text-input">Nomor Induk Kependudukan (NIK)</Label>
-                            </Col>
-                            <Col xs="4" md="4" style={{ marginTop: '15px' }}>
-                                <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
-                            </Col>
-                            <Col xs="2" md="2" lg="1" style={{ marginTop: '15px' }}>
-                                <Button className="btn btn-facebook btnFilter" onClick={this.handleBdki}
-                                // onClick={this.toggleModal}
-                                >
-                                <i className="icon-search4"></i></Button>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
-                                <Label htmlFor="text-input">Nama</Label>
-                            </Col>
-                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
-                                <Input type="text" value={this.state.namaPeserta} disabled/>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
-                                <Label htmlFor="text-input">Alamat</Label>
-                            </Col>
-                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
-                                <Input type="text" value={this.state.alamat} disabled/>
-                            </Col>
-                        </Row>
-                        <Row>
-                            <Col xs="6" md="3" style={{ marginTop: '15px' }}>
-                                <Label htmlFor="text-input">No. Handphone</Label>
-                            </Col>
-                            <Col xs="6" md="6" lg="6" style={{ marginTop: '15px' }}>
-                                <Input type="number" value={this.state.noHp} disabled/>
-                            </Col>
-                        </Row>
-
-                    </FormGroup>
-
-                    <FormGroup row>
-                        <Col xs="6" md="3" lg="2">
+                    <Row>
+                        <Col xs="12" md="3" >
+                            <Label htmlFor="text-input">Nomor Induk Kependudukan</Label>
+                        </Col>
+                        <Col xs="10" md="7">
+                            <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
+                        </Col>
+                        <Col xs="2" md="2">
+                            <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}
+                            // onClick={this.handleBdki}
+                            // onClick={this.toggleModal}
+                            >
+                            <i className="icon-search4"></i></Button>
+                        </Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">Nama</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                            <Input type="text" value={this.state.namaPeserta} disabled/>
+                        </Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">Alamat</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                            <Input type="text" value={this.state.alamat} disabled/>
+                        </Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">No. Handphone</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                            <Input type="number" value={this.state.noHp} disabled/>
+                        </Col>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
                             <Label htmlFor="text-input">Profesi</Label>
                         </Col>
-                        <Col  xs="6" md="6" lg="6">
-                            <Select options={this.state.profesi} onChange={this.changeProfesi} value={this.state.currentProfesi} isClearable placeholder="Profesi" />
+                        <Col  xs="12" md="9">
+                            <Select options={this.state.profesi} onChange={this.changeProfesi} value={this.state.currentProfesi} isClearable placeholder="Profesi" maxMenuHeight={140}/>
                         </Col>
-                    </FormGroup>
-
-                    <FormGroup row>
-                        <Col xs="6" md="3" lg="2">
-                            <Label htmlFor="text-input">Pelatihan Teknis Pelayanan dan R/R</Label>
+                    </Row>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">Pelatihan Teknis Pelayanan & R/R</Label>
                         </Col>
-                        <Col  xs="6" md="6" lg="6">
-                            <Select options={this.state.checkbox} onChange={this.handlePelatihan} value={this.state.setPelatihan} isClearable placeholder="Pilih Pelatihan" />
+                        <Col  xs="12" md="9" >
+                            <Select options={this.state.checkbox} onChange={this.handlePelatihan} value={this.state.setPelatihan} isClearable placeholder="Pilih Pelatihan" maxMenuHeight={140}/>
                         </Col>
-
-                        {/* <Col md="4">
-                            <Row>
-                                {this.state.show_checkbox.map((item) => 
-                                    <Col md="6">
-                                        <FormGroup check className="checkbox">
-                                            <Input className="form-check-input" width="10px" type="checkbox" id="checkbox1" name="pilihan" onClick={this.inputcheckbox} value={item.label} />
-                                            <Label check className="form-check-label" htmlFor="checkbox1">{item.label}</Label>
-                                        </FormGroup>
-                                    </Col>
-                                )}
-                            </Row>
-                        </Col> */}
-                    </FormGroup>
-                    <FormGroup>
+                    </Row>
+                    <FormGroup className="mt-3">
                         <Row>
-                            <Col xs="6" md="4" lg="4" className="my-2" align="right">
+                            <Col xs="6" md="6"className="my-2" align="right">
                                 <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Tenaga</Button>
                             </Col>
-                            <Col xs="6" md="4" lg="4" className="my-2">
+                            <Col xs="6" md="6"className="my-2">
                                 <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahTenaga}><i className="icon-users2"></i> Jumlah Tenaga: <b>{this.state.jmlhTenaga}</b></Button>
                             </Col>
                         </Row>

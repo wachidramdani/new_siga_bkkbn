@@ -168,25 +168,25 @@ class Pendaftaran extends Component {
                                     </Row>
                                     <Row className="mt-2">
                                         <Col xs="4" md="3">
-                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kecamatan</b></Label>
+                                            <Label className="labelForm" htmlFor="kabupaten"><b>Kecamatan</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
                                             <Select options={opt_Kecamatan} value={this.state.selectedOptionKecamatan} onChange={this.onChangeKecamatan} placeholder="Cari" isClearable maxMenuHeight={140} />
                                         </Col>
                                         <Col xs="4" md="3">
-                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Desa/Kel</b></Label>
+                                            <Label className="labelForm" htmlFor="kabupaten"><b>Desa/Kel</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
                                             <Select options={opt_Kelurahan} value={this.state.selectedOptionKelurahan} onChange={this.onChangeKelurahan} placeholder="Cari" isClearable maxMenuHeight={140} />
                                         </Col>
                                         <Col xs="4" md="3">
-                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Dusun/RW</b></Label>
+                                            <Label className="labelForm" htmlFor="kabupaten"><b>Dusun/RW</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
                                             <Select options={opt_RW} value={this.state.selectedOptionRW} onChange={this.onChangeRW} placeholder="Cari" isClearable maxMenuHeight={140} />
                                         </Col>
                                         <Col xs="4" md="3">
-                                            <Label className="labelForm28" htmlFor="kabupaten"><b>RT</b></Label>
+                                            <Label className="labelForm" htmlFor="kabupaten"><b>RT</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
                                             <Select options={opt_RT} value={this.state.selectedOptionRT} onChange={this.onChangeRT} placeholder="Cari" isClearable maxMenuHeight={140} />

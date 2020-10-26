@@ -255,162 +255,162 @@ class Step2 extends Component {
 
         return (
             <div>
-                {/* <h6>II. SARANA DAN PERLENGKAPAN </h6> */}
-                <div style={{ position: 'absolute', right: '0', marginTop: '0px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
+                <h6>II. SARANA DAN PERLENGKAPAN </h6>
+                <div style={{ position: 'absolute', right: '0', marginTop: '-25px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
                 <Row >
                     <CardBody >
                         <FormGroup>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Tensimeter & Steroskop</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input  type="number"  id="jalan" name="tensimeter" style={{ textAlign: 'right' }} value={this.state.tensimeter} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Timbangan Berat Badan</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="timbangan" style={{ textAlign: 'right' }} value={this.state.timbangan || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Unit</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Kursi/Meja Ginekolog</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="kursi_meja" style={{ textAlign: 'right' }} value={this.state.kursi_meja || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">UNIT</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Sterilisator</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="sterilisator" style={{ textAlign: 'right' }} value={this.state.sterilisator || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">UNIT</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">IUD Kit</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="iud" style={{ textAlign: 'right' }} value={this.state.iud || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Implant Removal Kit</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="implan" style={{ textAlign: 'right' }} value={this.state.implan || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Vasektomi Kit</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="vasektomi" style={{ textAlign: 'right' }} value={this.state.vasektomi || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Minilaparotomi Kit</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="minilaparotomi" style={{ textAlign: 'right' }} value={this.state.minilaparotomi || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Laparoskopi</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="laparoski" style={{ textAlign: 'right' }} value={this.state.laparoski || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">RK KB & Kesehatan Reproduksi</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="rk_kb" style={{ textAlign: 'right' }} value={this.state.rk_kb || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Ruang</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Konseling Kit (ABPK)</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="konseling" style={{ textAlign: 'right' }} value={this.state.konseling || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Materi Kesehatan Reproduksi</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="materiKesehatan" style={{ textAlign: 'right' }} value={this.state.materiKesehatan || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Buah</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
-                                    <Label className="labelForm">BP3K/ Buku Std Yan KB</Label>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
+                                    <Label className="labelForm">BP3K/ Buku Standarisasi Yan KB</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="bp3k" style={{ textAlign: 'right' }} value={this.state.bp3k || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">SET</Label>
                                 </Col>
                             </Row>
                             <Row>
-                                <Col md="5" xs="6" style={{ paddingTop: '10px' }}>
+                                <Col md="9" xs="7" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Sarana Komputer/Laptop</Label>
                                 </Col>
                                 <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
                                     <Input type="number"  id="jalan" name="saranaKomputer" style={{ textAlign: 'right' }} value={this.state.saranaKomputer || 0} onChange={this.handleChange} />
                                 </Col>
-                                <Col md="2" xs="3" style={{ paddingTop: '10px' }}>
+                                <Col md="1" xs="2" style={{ paddingTop: '10px' }}>
                                     <Label className="labelForm">Unit</Label>
                                 </Col>
                             </Row>

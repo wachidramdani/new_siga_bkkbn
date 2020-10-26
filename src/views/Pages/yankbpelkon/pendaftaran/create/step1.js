@@ -622,8 +622,9 @@ class Step1 extends Component {
                         <Col sm="12">
                             <Row>
                                 <div className="divImg"><img src={btnBack} onClick={this.handleBack} alt=""  style={{width: '28px', height: '28px', marginLeft:'15px'}}/></div>
-                                <Col md="2"></Col>
-                                
+                                <div style={{marginLeft: '15px'}}>
+                                    <h6>I. 11.06.081.002.002.017</h6>
+                                </div>                                
                                 <div style={{position:'absolute', right: '20px', marginTop:'0px', fontSize:'12px'}}>{this.props.currentStep}/{this.props.totalSteps}</div>
                             </Row>
                             <CardBody className="card-body-nopad">
