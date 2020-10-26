@@ -256,15 +256,16 @@ class Dashboard extends Component {
                     <CarouselProvider
                       naturalSlideWidth={600}
                       naturalSlideHeight={310}
-                      totalSlides={3}
+                      totalSlides={4}
                       step={1}
                       isPlaying={true}
                       interval={10000}
                     >
                       <Slider>
                         <Slide index={0}><img src={slide3} alt=""  className="imgBg"/></Slide>
-                        <Slide index={1}><img src={slide1} alt=""  className="imgBg"/></Slide>
-                        <Slide index={2}><img src={slide2} alt=""  className="imgBg"/></Slide>
+                        <Slide index={1}><img src={slide2} alt=""  className="imgBg"/></Slide>
+                        <Slide index={2}><img src={slide3} alt=""  className="imgBg"/></Slide>
+                        <Slide index={3}><img src={slide2} alt=""  className="imgBg"/></Slide>
                       </Slider>
                       <DotGroup className="prcDot"/>
                     </CarouselProvider>

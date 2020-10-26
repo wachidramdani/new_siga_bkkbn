@@ -15,7 +15,20 @@ class Registrasi extends Component {
             status: 'Closed',
             fadeIn: true,
             timeout: 300,
+            selectedOptionFaskes: [],
+            noreg: '-',
+            bulan: '-',
+            jmlPelayan: '-'
         };
+    }
+
+    onChangeFaskes = (selectedOptions) => {
+        this.setState({ 
+            selectedOptionFaskes: selectedOptions, 
+            noreg: selectedOptions ? selectedOptions.value : '-',
+            bulan: selectedOptions ? selectedOptions.bulan : '-',
+            jmlPelayan: selectedOptions ? selectedOptions.jmlPelayan : '-'
+        });
     }
 
     handleClickOpen = () => {
@@ -37,6 +50,19 @@ class Registrasi extends Component {
     }
 
     render() {
+        const opt_faskes = [
+            {value: '117301506', label: 'BPM Yanti Am.Keb', bulan: 'Oktober 2020', jmlPelayan: '17'},
+            {value: '121221303', label: 'Pustu Cot Keueung', bulan: 'Juni 2020', jmlPelayan: '8'},
+            {value: '119209289', label: 'Puskesmas Lhoong', bulan: 'Juli 2020', jmlPelayan: '6'},
+            {value: '102990294', label: 'Puskesmas Lhoknga', bulan: 'September 2020', jmlPelayan: '8'},
+            {value: '118927390', label: 'Puskesmas Blang Bintang', bulan: 'Oktober 2020', jmlPelayan: '5'},
+            {value: '189482911', label: 'Puskesmas Lampisang', bulan: 'Oktober 2020', jmlPelayan: '10'},
+            {value: '119029971', label: 'RSUD Aceh Besar', bulan: 'Juli 2020', jmlPelayan: '13'},
+            {value: '112276716', label: 'KKB Indrapuri', bulan: 'Agustus 2020', jmlPelayan: '7'},
+            {value: '120994712', label: 'Puskesmas Lampupok', bulan: 'September 2020', jmlPelayan: '5'},
+            {value: '115672881', label: 'Puskesmas Mesjid Raya', bulan: 'Oktober 2020', jmlPelayan: '7'}
+        ]
+
         return (
             <div className="animated fadeIn">
                 <BlockUi tag="div" blocking={this.state.blocking}>
@@ -55,35 +81,35 @@ class Registrasi extends Component {
                                                 </Col>
                                                 <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>
                                                     <Row>
-                                                        <Col xs="4" md="2">
+                                                        <Col xs="4" md="3">
                                                             <Label className="labelForm28" htmlFor="provinsi"><b>Provinsi</b></Label>
                                                         </Col>
-                                                        <Col xs="8" md="10">
+                                                        <Col xs="8" md="9">
                                                             <Label className="labelForm28" htmlFor="provinsi">Aceh</Label>
                                                         </Col>
-                                                        <Col xs="4" md="2">
+                                                        <Col xs="4" md="3">
                                                             <Label className="labelForm28" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
                                                         </Col>
-                                                        <Col xs="8" md="10">
+                                                        <Col xs="8" md="9">
                                                             <Label className="labelForm28" htmlFor="provinsi">Aceh Besar</Label>
                                                         </Col>
-                                                        <Col xs="4" md="2">
+                                                        <Col xs="4" md="3">
                                                             <Label className="labelForm28" htmlFor="kabupaten"><b>Kode</b></Label>
                                                         </Col>
-                                                        <Col xs="8" md="10">
+                                                        <Col xs="8" md="9">
                                                             <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
                                                         </Col>
-                                                        <Col xs="4" md="2">
-                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Faskes</b></Label>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J. Faskes</b></Label>
                                                         </Col>
-                                                        <Col xs="8" md="10">
-                                                            <Select options={this.state.opt_prov} value={this.state.provinsi} placeholder="Cari" isClearable />
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">28</Label>
                                                         </Col>
-                                                        <Col xs="4" md="2">
-                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>No Reg</b></Label>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J. Tenaga</b></Label>
                                                         </Col>
-                                                        <Col xs="8" md="10">
-                                                            <Label className="labelForm28" htmlFor="provinsi">-</Label>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">75</Label>
                                                         </Col>
                                                     </Row>
                                                 </Col>
@@ -91,11 +117,25 @@ class Registrasi extends Component {
                                         </Col>
                                     </Row>
                                     <Row className="mt-2">
+                                        <Col xs="4" md="3">
+                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Faskes</b></Label>
+                                        </Col>
+                                        <Col xs="8" md="9">
+                                            <Select options={opt_faskes} value={this.state.selectedOptionFaskes} onChange={this.onChangeFaskes} placeholder="Cari" isClearable />
+                                        </Col>
+                                        <Col xs="4" md="3">
+                                            <Label className="labelForm28" htmlFor="kabupaten"><b>No Registrasi</b></Label>
+                                        </Col>
+                                        <Col xs="8" md="9">
+                                            <Label className="labelForm28" htmlFor="provinsi"><i>{this.state.noreg}</i></Label>
+                                        </Col>
+                                    </Row>
+                                    <Row className="mt-2">
                                         <Col xs="6" md="6">
                                             <Card className="mb10px">
                                                 <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
                                                     <div style={{width: '100%', textAlign: 'center'}}>
-                                                        <div style={{fontSize:'14px', lineHeight:'33px', fontWeight: 'bold'}}>Oktober 2020</div>
+                                                        <div style={{fontSize:'14px', lineHeight:'33px', fontWeight: 'bold'}}>{this.state.bulan}</div>
                                                         <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Bulan Lapor Terakhir</div>
                                                     </div>
                                                 </CardBody>
@@ -105,7 +145,7 @@ class Registrasi extends Component {
                                             <Card className="mb10px">
                                                 <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
                                                     <div style={{width: '100%', textAlign: 'center'}}>
-                                                        <div style={{fontSize:'14px', lineHeight:'33px',fontWeight: 'bold'}}>17</div>
+                                                        <div style={{fontSize:'14px', lineHeight:'33px',fontWeight: 'bold'}}>{this.state.jmlPelayan}</div>
                                                         <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Pelayanan</div>
                                                     </div>
                                                 </CardBody>
