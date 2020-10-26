@@ -9,6 +9,7 @@ const Table = React.lazy(() => import('./views/Base/Table'));
 // YAN KB PELKON
 const Pendaftaran = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/index'));
 const PendaftaranDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/daftar'));
+const RegistrasiDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/daftar'));
 const CreateYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/create/create'));
 const LihatYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/lihat/lihat'));
 const EditYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/edit/edit'));
@@ -163,6 +164,7 @@ const routes = [
     //YAN KB / PELKON
     { path: '/pendaftaran', exact: true, name: 'Pendaftaran Tempat Pelayanan KB', component: Pendaftaran },
     { path: '/pendaftaran/daftar', name: 'Daftar Tempat Pelayanan KB', component: PendaftaranDaftar },
+    { path: '/registrasi/daftar', name: 'Daftar Register KB', component: RegistrasiDaftar },
     { path: '/pendaftaran/create', name: 'Tambah', component: CreateYankbpelkon },
     { path: '/pendaftaran/lihat', name: 'lihat', component: LihatYankbpelkon },
     { path: '/pendaftaran/edit', name: 'edit', component: EditYankbpelkon },
