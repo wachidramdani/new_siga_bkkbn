@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardBody, Col, Button, Row, Badge, Input } from 'reactstrap';
+import { Card, CardBody, Col, Button, Row, Badge,Label,FormGroup, Form, Input, Modal, ModalHeader, ModalFooter, ModalBody } from 'reactstrap';
 
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
@@ -11,6 +11,7 @@ class Daftar extends Component {
         super(props);
         this.state = {
             open: false,
+            modal: false,
             blocking: false,
             status: 'Closed',
             fadeIn: true,
@@ -19,7 +20,7 @@ class Daftar extends Component {
             perPage: 6,
             currentPage: 0,
             data: [
-                {"id":1, "issue":"Pustu lam Rabo","desc":"Jalan Sore, Peukan Bada", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"5"},
+                {"id":1, "issue":"BPM Yanti Am.Keb","desc":"JL Kenari Lk2, Banda Masem", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"2"},
                 {"id":2, "issue":"Pustu Cot Keueung","desc":"Jalan Supriyadi, Peukan Bada", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"5"},
                 {"id":3, "issue":"Puskesmas Lhoong","desc":"Jalan Merdeka, Lhoong", "date":"2020-07-12", "status": "New", "priority": "Value Creation", "facility":"Block A", "valtype":"Reduce Cost", "attapp":"Limited", "atttm":"3"},
                 {"id":4, "issue":"Puskesmas Lhoknga","desc":"Jalan Borobudur, Lhoknga", "date":"2020-07-11", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Limited", "atttm":"7"},
@@ -38,6 +39,14 @@ class Daftar extends Component {
         };
     }
 
+    detailTempatPelayananKB = () => {
+        this.setState({modal: !this.state.modal})
+    }
+
+    toggle = () => {
+        this.setState({modal: !this.state.modal});
+    }
+
     componentDidMount() {
         this.receivedData()
     }
@@ -45,13 +54,15 @@ class Daftar extends Component {
     receivedData= () => {
         const slice = this.state.data.slice(this.state.offset, this.state.offset + this.state.perPage)
         const postData = slice.map(row => 
-            <React.Fragment key={row.id}>
+            <React.Fragment>
                 <Col xs="6" lg="3">
+                    <div onClick={this.detailTempatPelayananKB} >
+                    <div></div>
                     {/* <div onClick={() => {this.props.history.push({
                             pathname: '/evaluation/action',
                             id: row.id,
-                            })}} > */}
-                    <div>
+                            })}} >
+                    <div> */}
                         <Card>
                             <CardBody className="customBox">
                                 <div className="cbnumber">
@@ -152,6 +163,190 @@ class Daftar extends Component {
                                             activeClassName={"active"}/>
                                     <Row>
                                         {this.state.postData}
+                                    </Row>
+
+                                    <Row>
+                                    <Modal isOpen={ this.state.modal } toggle={ this.toggle } className='modal-md modal-dialog modal-primary' backdrop="static">
+                                            <ModalHeader toggle={ this.toggle }><i className="icon-clipboard6"></i> Detail Faskes KB</ModalHeader>
+                                            <ModalBody>
+                                            <Form>
+                                                <FormGroup>
+                                                <Label >Kode</Label><br></br>
+                                                <Label style={{padding: '15px', marginTop:'-25px'}}><b><i>117301506</i></b></Label>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-30px'}} row>
+                                                <Label for="tgl" sm={4}>Nama Tempat KB</Label>
+                                                <Col sm={8}>
+                                                    <Label sm={12}><b>BPM Yanti Am.Keb</b></Label>
+                                                </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="job_bpp" sm={4}>Lokasi</Label>
+                                                <Col sm={8}>
+                                                    <Label sm={12}><b>JL Kenari Lk2, Banda Masem, Banda Sakti, Kota Lhoksumawe, Aceh</b></Label>
+                                                </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="job_bpp" sm={4}>Jenis Faskes KB </Label>
+                                                <Col sm={8}>
+                                                    <Label sm={12}><b>Faskes, Klinik Pratama</b></Label>
+                                                </Col>
+                                                </FormGroup>
+
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="size" sm={4}>Kepemilikan</Label>
+                                                <Col sm={8}>
+                                                    <Label sm={12}><b>Swasta, Bekerja Sama Dengan BPJS Kesehatan </b></Label>
+                                                </Col>
+                                                </FormGroup>
+                                                
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="cust" sm={5}>Sarana Dan Perlengkapan</Label>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>Tensimeter & Steroskop</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>3</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>SET</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>Strelisator</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>2</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Unit</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>Timbangan Berat Badan</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>1</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Unit</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="cust" sm={5}>Tenaga</Label>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm">NIK</Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm">Nama</Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm">Profesi</Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>3175092502941001</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Tenaga 1</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Dokter</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>3175092502941002</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Tenaga 2</b></Label>
+                                                            </Col>
+                                                            <Col md="2" xs="3">
+                                                                <Label className="labelForm"><b>Admin</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+
+                                                <FormGroup style={{marginTop: '-20px'}} row>
+                                                <Label for="size" sm={4}>Persetujuan</Label>
+                                                <Col sm={8}>
+                                                    <Label sm={12}><b>Kota Lhoksumawe, 31 May 2018 </b></Label>
+                                                </Col>
+                                                </FormGroup>
+
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm">Kepala OPD Kab/Kota/Pimpinan Faskes</Label>
+                                                            </Col>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm">Pimpinan Faskes/Jaringan/Jejaring</Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>Dra.Mariana Affan, MM</b></Label>
+                                                            </Col>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>Yanti, Am.Keb</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+
+                                                <FormGroup style={{marginTop: '-20px', marginLeft:'1px'}} row>
+                                                    <Col sm={12}>
+                                                        <Row>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>196306121990032002</b></Label>
+                                                            </Col>
+                                                            <Col md="5" xs="6">
+                                                                <Label className="labelForm"><b>000000000000000000</b></Label>
+                                                            </Col>
+                                                        </Row>
+                                                    </Col>
+                                                </FormGroup>
+                                                   
+                                                </Form>
+                                            </ModalBody>
+                                        </Modal>
                                     </Row>
                                 </CardBody>
                             </Card>

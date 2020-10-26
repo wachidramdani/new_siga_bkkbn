@@ -13,7 +13,11 @@ class Step1 extends Component {
         super(props);
         this.state = {
             blocking: false,
-            datas: [],
+            datas: [
+                {id:'1',nomorRegisterFaskesKB:'001'},
+                {id:'2',nomorRegisterFaskesKB:'002'},
+                {id:'3',nomorRegisterFaskesKB:'003'}
+            ],
             noRegisterFaskesKb: '',
             hidden_noRegisterFaskesKb: false,
             noJaringanJejaring: '',
@@ -202,22 +206,23 @@ class Step1 extends Component {
     
     
     componentDidMount() {
-        this.setState({ blocking: true });
-        this.setState({ datas: [] });
-        API013.get('siga/pelayanankb/getlistbylocation?provinsiId=' + sessionStorage.getItem("kd_prov") + '&kabupatenId=' + sessionStorage.getItem("kd_kab") + '&kecamatanId=0&kelurahanId=0&rwId=0&rtId=0')
-        .then(res => {
-            if(res.status === 200){ 
-                this.setState({ datas: this.state.datas.concat(res.data) });
-            }
-            this.setState({ blocking: false });
-        }).catch((error) => {
-            this.setState({ blocking: false });
-            // Swal.fire({
-            //     title: 'Error',
-            //     icon: 'error',
-            //     text: 'Please Check Your Network Connection.',
-            // });
-        });
+        this.setState({ blocking: false });
+        // this.setState({ datas: [] });
+        // API013.get('siga/pelayanankb/getlistbylocation?provinsiId=' + sessionStorage.getItem("kd_prov") + '&kabupatenId=' + sessionStorage.getItem("kd_kab") + '&kecamatanId=0&kelurahanId=0&rwId=0&rtId=0')
+        // .then(res => {
+        //     console.log(res.data,'tes')
+        //     if(res.status === 200){ 
+        //         this.setState({ datas: this.state.datas.concat(res.data) });
+        //     }
+        //     this.setState({ blocking: false });
+        // }).catch((error) => {
+        //     this.setState({ blocking: false });
+        //     Swal.fire({
+        //         title: 'Error',
+        //         icon: 'error',
+        //         text: 'Please Check Your Network Connection.',
+        //     });
+        // });
     }
 
     // input nomor faskes kb

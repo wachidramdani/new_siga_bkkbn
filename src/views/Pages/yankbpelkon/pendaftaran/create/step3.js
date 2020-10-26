@@ -9,7 +9,7 @@ import API014 from '../../../../../services/API014';
 import Swal from 'sweetalert2';
 import FormInput from '../../registrasi/create/formInput';
 import DaftarTenaga from './daftarTenaga';
-
+import ListBdki from './listBdki';
 
 
 class Step3 extends Component {
@@ -23,6 +23,7 @@ class Step3 extends Component {
             modal: false,
             bdkiModal: false,
             tenagaModal: false,
+            listBdkiModal: false,
             nestedModal: false,
             activeTab: 0,
             currentProfesi: [],
@@ -444,6 +445,17 @@ class Step3 extends Component {
         })
         // alert('list tenaga');
     }
+
+    handleBdki = () => {
+        this.setState({
+            listBdkiModal: !this.state.listBdkiModal
+        })
+        // alert('list tenaga');
+    }
+
+    toggleBdki = () => {
+        this.setState({ listBdkiModal: !this.state.listBdkiModal })
+    };
 
     handleProv = (e) => {
         if (e) {
@@ -1403,8 +1415,8 @@ class Step3 extends Component {
                                 <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                             </Col>
                             <Col xs="2" md="2" lg="1" style={{ marginTop: '15px' }}>
-                                <Button className="btn btn-facebook btnFilter" 
-                                onClick={this.toggleModal}
+                                <Button className="btn btn-facebook btnFilter" onClick={this.handleBdki}
+                                // onClick={this.toggleModal}
                                 >
                                 <i className="icon-search4"></i></Button>
                             </Col>
@@ -1687,6 +1699,9 @@ class Step3 extends Component {
                     </Row>
                     <Row>
                         <DaftarTenaga tenagaModal={this.state.tenagaModal} toggleAdd={this.toggleAdd} />  
+                    </Row>
+                    <Row>
+                        <ListBdki listBdkiModal={this.state.listBdkiModal} toggleBdki={this.toggleBdki} />  
                     </Row>
                    
 
