@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { CardBody, Col, Row, FormGroup, Label, Input } from 'reactstrap';
+import Swal from 'sweetalert2';
+import btnBack from '../../../../../assets/img/btnBack.png';
+
 
 class Step1 extends Component {
     constructor(props) {
@@ -30,6 +33,22 @@ class Step1 extends Component {
         this.props.nextStep();
     }
 
+    handleBack = () => {
+        Swal.fire({
+            title: 'Peringatan',
+            text: "Kembali ke halaman Pendaftaran?",
+            icon: 'warning',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya!',
+            confirmButtonColor: '#3085d6',
+            showCancelButton: true,
+        }).then((result) => {
+            if (result.value) {       
+                this.props.clickBack();
+            }
+        });
+    }
+
     render() {
 
         const monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni",
@@ -43,8 +62,13 @@ class Step1 extends Component {
                 <container-fluid>
                     <Row>
                         <Col sm="12">
-                            <h6>&nbsp; </h6>
-                            <div style={{ position: 'absolute', right: '15px', marginTop: '-25px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
+                            <Row>
+                                <div className="divImg"><img src={btnBack} onClick={this.handleBack} alt=""  style={{width: '28px', height: '28px', marginLeft:'15px'}}/></div>
+                                <Col md="2"></Col>
+                                
+                                <div style={{position:'absolute', right: '20px', marginTop:'0px', fontSize:'12px'}}>{this.props.currentStep}/{this.props.totalSteps}</div>
+                            </Row>
+                            {/* <h6>&nbsp; </h6> */}
                             <CardBody className="card-body-nopad mt-3">
                                 <FormGroup>
                                     <Row>
@@ -91,8 +115,8 @@ class Step1 extends Component {
                             </CardBody>
                         </Col>
                     </Row>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-                        <button className="btn btn-warning" onClick={this.props.clickBack}>Sebelumnya</button>
+                    <div style={{ display: 'flex', justifyContent: 'flex-end' }}>
+                        {/* <button className="btn btn-warning" onClick={this.props.clickBack}>Sebelumnya</button> */}
                         <button className="btn btn-info" onClick={this.handleNext}>Selanjutnya</button>
                     </div>
                 </container-fluid>

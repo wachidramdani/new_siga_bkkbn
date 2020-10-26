@@ -8,7 +8,7 @@ import Swal from 'sweetalert2';
 import btnBack from '../../../../../assets/img/btnBack.png';
 import ReactPaginate from 'react-paginate';
 
-class ListBdki extends Component {
+class DaftarPeserta extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -16,10 +16,10 @@ class ListBdki extends Component {
             perPage: 6,
             currentPage: 0,
             data: [
-                {"id":1, "issue":"Bambang Pamungkas","desc":"12-02-1993", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
-                {"id":2, "issue":"Susi Susanti","desc":"12-02-1993", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
-                {"id":3, "issue":"Cris John","desc":"02-02-1993t", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
-                {"id":4, "issue":"Topik Hidayat","desc":"22-02-1993", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
+                {"id":1, "issue":"Peserta A","desc":"JL Raya I, 081122334455", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
+                {"id":2, "issue":"Peserta B","desc":"JL Raya II, , 081122334456", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
+                {"id":3, "issue":"Peserta C","desc":"JL Raya III, , 081122334457", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
+                {"id":4, "issue":"Peserta D","desc":"JL Raya IV, , 081122334458", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
             ]
         }
     }
@@ -54,7 +54,6 @@ class ListBdki extends Component {
                                 <div className="cbissue">
                                     {row.issue}<br/>
                                     <span className="cbdesc">{row.desc}</span><br/>
-                                    {/* <span className="cbdate">{row.date}</span> */}
                                 </div>
                             </CardBody>
                         </Card>
@@ -83,14 +82,14 @@ class ListBdki extends Component {
     };
 
     handleClick = () => {
-        this.props.toggleBdki();
+        this.props.togglePeserta();
     }
 
 
     render() {
         return (
-            <Modal style={{height:'100vh'}}isOpen={this.props.listBdkiModal} toggle={this.handleClick}>
-                <ModalHeader toggle={this.handleClick}>Daftar Tenaga KB Non BDKI</ModalHeader>
+            <Modal style={{height:'100vh'}}isOpen={this.props.pesertaModal} toggle={this.handleClick}>
+                <ModalHeader toggle={this.handleClick}>Daftar Tenaga KB</ModalHeader>
                 <ModalBody style={{height:'calc(100vh - 59px)'}}>
                     <div style={{marginTop:'20px'}} className="filterSearchPag">
                         <Input type="text" placeholder="Pencarian"
@@ -118,4 +117,4 @@ class ListBdki extends Component {
     }
 }
 
-export default ListBdki;
+export default DaftarPeserta;

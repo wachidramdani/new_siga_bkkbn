@@ -33,7 +33,7 @@ class Registrasi extends Component {
     }
 
     handleSeacrh = () => {
-        this.props.history.push('/register/daftar');
+        this.props.history.push('/registrasi/daftar');
     }
 
     render() {

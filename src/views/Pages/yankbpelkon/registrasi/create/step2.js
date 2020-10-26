@@ -13,6 +13,11 @@ import JenisKunjungan from '../../../../Commons/Json/JenisKunjungan.json'
 import Keluhan from '../../../../Commons/Json/Keluhan.json'
 import JenisTindakan from '../../../../Commons/Json/JenisTindakan.json'
 
+import DaftarPeserta from './daftarPeserta';
+import ListBdki from '../../pendaftaran/create/listBdki';
+
+
+
 class Step2 extends Component {
     constructor(props) {
         super(props);
@@ -87,7 +92,11 @@ class Step2 extends Component {
                 { "value": "Kegagalan", "label": "Kegagalan" }
             ],
 
-            value_kasus:null
+            value_kasus:null,
+            jmlhPeserta: 0,
+            pesertaModal: false,
+            listBdkiModal: false,
+
         }
     }
 
@@ -773,6 +782,35 @@ class Step2 extends Component {
         this.props.nextStep();
     }
 
+
+    simpan = () => {
+        this.setState({
+            jmlhPeserta: this.state.jmlhPeserta + 1
+        })
+    }
+
+    handleJumlahPeserta = () => {
+        this.setState({
+            pesertaModal: !this.state.pesertaModal
+        })
+        // alert('list tenaga');
+    }
+
+    togglePeserta = () => {
+        this.setState({ pesertaModal: !this.state.pesertaModal })
+    };
+
+    handleBdki = () => {
+        this.setState({
+            listBdkiModal: !this.state.listBdkiModal
+        })
+        // alert('list tenaga');
+    }
+
+    toggleBdki = () => {
+        this.setState({ listBdkiModal: !this.state.listBdkiModal })
+    };
+
     render() {
 
         function tglFormat(cell) {
@@ -1271,7 +1309,8 @@ class Step2 extends Component {
                                                 <input type="text" className="form-control" placeholder="Nomor Induk Kependudukan" name="nikPeserta" value={this.state.nikPeserta} onChange={this.handleNikChange} onKeyDown={this.callData} />
                                                 <span className="input-group-btn">
                                                     <button className="btn btn-default" type="submit"
-                                                        onClick={this.toggleModal}
+                                                        // onClick={this.toggleModal}
+                                                        onClick={this.handleBdki}
                                                         style={{ border: '1px solid #e4e7ea', borderTopLeftRadius: '0', borderBottomLeftRadius: '0', borderLeft: 'none' }}>
                                                         <i className="icon-search4"></i>
                                                     </button>
@@ -1282,19 +1321,19 @@ class Step2 extends Component {
                                             <Label className="labelForm" htmlFor="text-input">Nama Peserta KB </Label>
                                         </Col>
                                         <Col xs="8" md="4">
-                                            <Input type="text" value={this.state.namaPeserta} disabled />
+                                            <Input type="text" value={this.state.namaPeserta} disabled/>
                                         </Col>
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">Alamat </Label>
                                         </Col>
                                         <Col xs="8" md="4">
-                                            <Input type="text" value={this.state.kkiPeserta} disabled />
+                                            <Input type="text" value={this.state.kkiPeserta} disabled/>
                                         </Col>
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">No. Handphone </Label>
                                         </Col>
                                         <Col xs="8" md="4">
-                                            <Input type="text" value={this.state.kkiPeserta} disabled />
+                                            <Input type="text" value={this.state.kkiPeserta} disabled/>
                                         </Col>        
                                     </Row>
                                 </FormGroup>
@@ -1347,6 +1386,16 @@ class Step2 extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
+                                        <Col xs="6" md="4" lg="4" className="my-2" align="right">
+                                            <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Peserta KB</Button>
+                                        </Col>
+                                        <Col xs="6" md="4" lg="4" className="my-2">
+                                            <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahPeserta}><i className="icon-users2"></i> Jumlah Peserta KB: <b>{this.state.jmlhPeserta}</b></Button>
+                                        </Col>
+                                    </Row>
+                                </FormGroup>
+                                {/* <FormGroup>
+                                    <Row>
                                         <Col xs="12" lg="4" align="right">
                                             <Collapse isOpen={!this.state.btnEdit}>
                                                 <button className="btn btn-facebook" onClick={this.addPeserta}>Tambah</button>
@@ -1357,11 +1406,11 @@ class Step2 extends Component {
                                             </Collapse>
                                         </Col>
                                     </Row>
-                                </FormGroup>
+                                </FormGroup> */}
                             </CardBody>
                         </Col>
                     </Row>
-                    <Row>
+                    {/* <Row>
                         <Col>
                             <Table2Edit
                                 caption=''
@@ -1370,7 +1419,7 @@ class Step2 extends Component {
                                 handlePageChange={this.handlePageChange}
                             />
                         </Col>
-                    </Row>
+                    </Row> */}
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <button className="btn btn-warning" onClick={this.props.previousStep}>Sebelumnya</button>
                         <button className="btn btn-info" onClick={this.handleNext}>Selanjutnya</button>
@@ -1566,6 +1615,12 @@ class Step2 extends Component {
                         )}
                     </ModalFooter>
                 </Modal>
+                <Row>
+                    <DaftarPeserta pesertaModal={this.state.pesertaModal} togglePeserta={this.togglePeserta} />  
+                </Row>
+                <Row>
+                    <ListBdki listBdkiModal={this.state.listBdkiModal} toggleBdki={this.toggleBdki} />  
+                </Row>
             </>
         )
     }

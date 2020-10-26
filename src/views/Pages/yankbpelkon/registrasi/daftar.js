@@ -20,21 +20,21 @@ class Daftar extends Component {
             perPage: 6,
             currentPage: 0,
             data: [
-                {"id":1, "issue":"BPM Yanti Am.Keb","desc":"JL Kenari Lk2, Banda Masem", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"2"},
-                {"id":2, "issue":"Pustu Cot Keueung","desc":"Jalan Supriyadi, Peukan Bada", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"5"},
-                {"id":3, "issue":"Puskesmas Lhoong","desc":"Jalan Merdeka, Lhoong", "date":"2020-07-12", "status": "New", "priority": "Value Creation", "facility":"Block A", "valtype":"Reduce Cost", "attapp":"Limited", "atttm":"3"},
-                {"id":4, "issue":"Puskesmas Lhoknga","desc":"Jalan Borobudur, Lhoknga", "date":"2020-07-11", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Limited", "atttm":"7"},
-                {"id":5, "issue":"Puskesmas Blang Bintang","desc":"Jalan SoeHat, Lembah Seulawah", "date":"2020-07-10", "status": "New", "priority": "Fit For Purpose", "facility":"South Natuna Sea Block B", "valtype":"Increase Production", "attapp":"Known", "atttm":"5"},
-                {"id":6, "issue":"Puskesmas Lampisang","desc":"Jalan Mauni, Kuta Baro", "date":"2020-07-09", "status": "New", "priority": "Fit For Purpose", "facility":"South Natuna Sea Block B", "valtype":"Reduce Cost", "attapp":"New", "atttm":"4"},
-                {"id":7, "issue":"RSUD Aceh Besar","desc":"Jalan A. Yani, Aceh Besar", "date":"2020-07-08", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"6"},
+                {"id":1, "issue":"BPM Yanti Am.Keb","desc":"01010101001", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"2"},
+                {"id":2, "issue":"Pustu Cot Keueung","desc":"1010101010", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"5"},
+                {"id":3, "issue":"Puskesmas Lhoong","desc":"020202020202", "date":"2020-07-12", "status": "New", "priority": "Value Creation", "facility":"Block A", "valtype":"Reduce Cost", "attapp":"Limited", "atttm":"3"},
+                {"id":4, "issue":"Puskesmas Lhoknga","desc":"1121121121222", "date":"2020-07-11", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Limited", "atttm":"7"},
+                {"id":5, "issue":"Puskesmas Blang Bintang","desc":"03030030303", "date":"2020-07-10", "status": "New", "priority": "Fit For Purpose", "facility":"South Natuna Sea Block B", "valtype":"Increase Production", "attapp":"Known", "atttm":"5"},
+                {"id":6, "issue":"Puskesmas Lampisang","desc":"04040404040404", "date":"2020-07-09", "status": "New", "priority": "Fit For Purpose", "facility":"South Natuna Sea Block B", "valtype":"Reduce Cost", "attapp":"New", "atttm":"4"},
+                {"id":7, "issue":"RSUD Aceh Besar","desc":"05050505055", "date":"2020-07-08", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"6"},
                 {"id":8, "issue":"KKB Indrapuri","desc":"Jalan Lawu, Blang Bintang", "date":"2020-07-08", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
-                {"id":9, "issue":"Puskesmas Lampupok","desc":"Jalan Panjaitan, Montasik", "date":"2020-07-06", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
+                {"id":9, "issue":"Puskesmas Lampupok","desc":"0606060606", "date":"2020-07-06", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
                 {"id":10, "issue":"Puskesmas Mesjid Raya","desc":"Jalan Siang, Suka Makmur", "date":"2020-07-06", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
-                {"id":11, "issue":"Puskesmas Leupung","desc":"Jalan Melati, Darul Kamal", "date":"2020-07-02", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
+                {"id":11, "issue":"Puskesmas Leupung","desc":"070707070707", "date":"2020-07-02", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
                 {"id":12, "issue":"Pustu Jeumpet","desc":"Jalan Anggrek, Darul Imarah", "date":"2020-07-02", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
-                {"id":13, "issue":"Puskesmas Ie Alang","desc":"Jalan Bali, Ingin Jaya", "date":"2020-06-28", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
+                {"id":13, "issue":"Puskesmas Ie Alang","desc":"0808080808080", "date":"2020-06-28", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
                 {"id":14, "issue":"Puskesmas Kuta Cot Glie","desc":"Jalan Pagi, Kuta Cot Glie", "date":"2020-06-22", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"},
-                {"id":15, "issue":"Pustu Punie","desc":"Jalan Bromo, Seulimeum", "date":"2020-06-18", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"}
+                {"id":15, "issue":"Pustu Punie","desc":"090909090909", "date":"2020-06-18", "status": "New", "priority": "Troubleshooting", "facility":"Lematang", "valtype":"Increased Efficency", "attapp":"Known", "atttm":"5"}
             ]
         };
     }
@@ -142,7 +142,7 @@ class Daftar extends Component {
                                 <CardBody>
                                     <div className="divTitleRight">
                                         <div className="divImg"><img src={btnBack} onClick={this.handleBack} alt=""  style={{width: '28px', height: '28px'}}/></div>
-                                        <div><span className="spanTitle">&#8226; Daftar Tempat Pelayanan KB</span></div>
+                                        <div><span className="spanTitle">&#8226; Daftar Pelayanan KB</span></div>
                                     </div>
                                     <div className="filterSearchPag">
                                         <Input type="text" placeholder="Pencarian"
