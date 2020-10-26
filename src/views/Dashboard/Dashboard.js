@@ -262,9 +262,9 @@ class Dashboard extends Component {
                       interval={10000}
                     >
                       <Slider>
-                        <Slide index={0}><img src={slide1} alt=""  className="imgBg"/></Slide>
-                        <Slide index={1}><img src={slide2} alt=""  className="imgBg"/></Slide>
-                        <Slide index={2}><img src={slide3} alt=""  className="imgBg"/></Slide>
+                        <Slide index={0}><img src={slide3} alt=""  className="imgBg"/></Slide>
+                        <Slide index={1}><img src={slide1} alt=""  className="imgBg"/></Slide>
+                        <Slide index={2}><img src={slide2} alt=""  className="imgBg"/></Slide>
                       </Slider>
                       <DotGroup className="prcDot"/>
                     </CarouselProvider>
