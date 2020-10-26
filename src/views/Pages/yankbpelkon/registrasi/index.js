@@ -5,6 +5,7 @@ import Select from 'react-select';
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
 import registration from '../../../../assets/img/registration.JPG';
+import cashier from '../../../../assets/img/cashier.JPG';
 
 class Registrasi extends Component {
     constructor(props) {
@@ -156,10 +157,10 @@ class Registrasi extends Component {
                                         <Col md="12">
                                             <Row>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Pelayanan</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Pelayanan</Button>
                                                 </Col>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Pelayanan</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Pelayanan</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
@@ -167,13 +168,7 @@ class Registrasi extends Component {
                                 </CardBody>
                             </Card>
                         </Col>
-                        <Col md="5" className="d-none d-sm-block" style={{borderLeft:"1px solid #C8E2FF", height: "calc(100vh - 120px)"}}>
-                            <Card >
-                                <CardBody className="card-body-nopad">
-                                    Right Side
-                                </CardBody>
-                            </Card>
-                        </Col>
+                        <Col md="5" className="d-none d-sm-block" style={{borderLeft:"1px dashed #C8E2FF", height: "calc(100vh - 120px)", backgroundImage: `url(${cashier})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom center', backgroundSize: 'contain'}}></Col>
                     </Row>
                 </BlockUi>
             </div >
