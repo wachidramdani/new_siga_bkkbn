@@ -100,13 +100,13 @@ class Registrasi extends Component {
                                                             <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
                                                         </Col>
                                                         <Col xs="4" md="3">
-                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J. Faskes</b></Label>
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J.Faskes</b></Label>
                                                         </Col>
                                                         <Col xs="8" md="9">
                                                             <Label className="labelForm28" htmlFor="provinsi">28</Label>
                                                         </Col>
                                                         <Col xs="4" md="3">
-                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J. Tenaga</b></Label>
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J.Tenaga</b></Label>
                                                         </Col>
                                                         <Col xs="8" md="9">
                                                             <Label className="labelForm28" htmlFor="provinsi">75</Label>
