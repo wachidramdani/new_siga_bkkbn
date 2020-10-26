@@ -121,7 +121,7 @@ class Registrasi extends Component {
                                             <Label className="labelForm28" htmlFor="kabupaten"><b>Faskes</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
-                                            <Select options={opt_faskes} value={this.state.selectedOptionFaskes} onChange={this.onChangeFaskes} placeholder="Cari" isClearable />
+                                            <Select options={opt_faskes} value={this.state.selectedOptionFaskes} onChange={this.onChangeFaskes} placeholder="Cari" isClearable maxMenuHeight={140} />
                                         </Col>
                                         <Col xs="4" md="3">
                                             <Label className="labelForm28" htmlFor="kabupaten"><b>No Registrasi</b></Label>
