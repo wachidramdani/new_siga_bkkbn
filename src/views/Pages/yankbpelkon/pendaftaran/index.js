@@ -54,47 +54,65 @@ class Pendaftaran extends Component {
                                     <Row>
                                         <Col md="12">
                                             <Row>
-                                                <Col xs="4" md="4 mb-2">
-                                                    <img src={location} alt=""  style={{width: '100%', height: '80px'}}/>
+                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'0'}}>
+                                                    <img src={location} alt=""  style={{width: '100%', height: '120px'}}/>
                                                 </Col>
-                                                <Col xs="8" md="8 mb-2">
+                                                <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>
                                                     <Row>
                                                         <Col xs="3" md="2">
-                                                            <Label className="labelForm" htmlFor="provinsi"><b>Provinsi</b></Label>
+                                                            <Label className="labelForm28" htmlFor="provinsi"><b>Provinsi</b></Label>
                                                         </Col>
                                                         <Col xs="9" md="10">
-                                                            <Label className="labelForm" htmlFor="provinsi">Aceh</Label>
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh</Label>
                                                         </Col>
                                                         <Col xs="3" md="2">
-                                                            <Label className="labelForm" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
                                                         </Col>
                                                         <Col xs="9" md="10">
-                                                            <Label className="labelForm" htmlFor="provinsi">Aceh Besar</Label>
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh Besar</Label>
+                                                        </Col>
+                                                        <Col xs="3" md="2">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kode</b></Label>
+                                                        </Col>
+                                                        <Col xs="9" md="10">
+                                                            <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
                                                         </Col>
                                                     </Row>
                                                 </Col>
                                             </Row>
                                         </Col>
                                     </Row>
-                                    <Row>
-                                        <Col xs="4">
-                                            <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Faskes</b> 15</Label>
+                                    <Row className="mt-2">
+                                        <Col xs="6">
+                                            {/* <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Faskes</b> 15</Label> */}
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'22px', fontWeight: 'bold'}}>15</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Faskes</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
                                         </Col>
-                                        <Col xs="4">
-                                            <Label className="labelForm" htmlFor="provinsi"><b>Jumlah Tenaga</b> 75</Label>
-                                        </Col>
-                                        <Col xs="4">
-                                            <Label className="labelForm" htmlFor="provinsi"><b>KD Area</b> 11.06</Label>
+                                        <Col xs="6">
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'22px', fontWeight: 'bold'}}>75</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Tenaga</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
                                         </Col>
                                     </Row>
                                     <Row className="mt-3">
                                         <Col md="12">
                                             <Row>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Faskes</Button>
                                                 </Col>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn48" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Faskes</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
