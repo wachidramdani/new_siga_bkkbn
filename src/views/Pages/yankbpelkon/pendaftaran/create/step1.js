@@ -630,24 +630,57 @@ class Step1 extends Component {
                             <CardBody className="card-body-nopad">
                             {/* <h6>I. Identitas </h6> */}
                                 <FormGroup>
-                                    <Row style={{ marginTop: '20px' }}>
-                                        <Col md="4" xs="12" >
-                                            <Label>No. Register Faskes</Label>
+                                    {/* <Row style={{ marginTop: '20px', padding:'4px' }}>
+                                        <Col md="4" xs="6">
+                                            <Row>
+                                                <Col md="12" style={{ textAlign: 'center' }}>
+                                                    <Label>No. Register Faskes KB</Label>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Input type="text" 
+                                                onChange={this.noRegisterFaskesKBChange}
+                                                maxLength="3"
+                                                disabled={this.state.hidden_noRegisterFaskesKb}
+                                                style={{ marginRight: '5px', textAlign: 'left' }} 
+                                                value={this.state.noRegisterFaskesKB || ''} />
+                                            </Row>
                                         </Col>
-                                        <Col md="6" xs="12" >
-                                        <Input type="text" 
-                                            onChange={this.noRegisterFaskesKBChange}
-                                            maxLength="3"
-                                            disabled={this.state.hidden_noRegisterFaskesKb}
-                                            style={{ marginRight: '5px', textAlign: 'left' }} 
-                                            value={this.state.noRegisterFaskesKB || ''} />
+                                        <Col md="4" xs="6">
+                                            <Row>
+                                                <Col md="12" style={{ textAlign: 'center' }}>
+                                                    <Label>No. Jaringan/Jejaring Faskes KB</Label>
+                                                </Col>
+                                            </Row>
+                                            <Row>
+                                                <Input type="text" 
+                                                readOnly={this.state.noJaringanFaskesKB_RO}
+                                                ref={c => (this.Text_noJaringanJejaring = c)}
+                                                value={this.state.noJaringanJejaring}
+                                                maxLength="2"
+                                                // onInput={this.JaringanJejaring}
+                                                onChange={this.noJaringanJejaringChange}
+                                                style={{ marginRight: '5px', textAlign: 'left' }} />
+                                            </Row>
                                         </Col>
-                                    </Row>
+                                    </Row> */}
+
                                     <Row style={{ marginTop: '15px' }}>
-                                        <Col md="4" xs="12" >
-                                            <Label>No. Jejaring</Label>
+                                        <Col md="6" xs="6" >
+                                            <Label>No. Register Faskes KB</Label>
                                         </Col>
-                                        <Col md="6" xs="12" >
+                                        <Col md="6" xs="6">
+                                            <Label>No. Jaringan/Jejaring Faskes KB</Label>
+                                        </Col>
+                                        <Col md="6" xs="6" >
+                                            <Input type="text" 
+                                                onChange={this.noRegisterFaskesKBChange}
+                                                maxLength="3"
+                                                disabled={this.state.hidden_noRegisterFaskesKb}
+                                                style={{ marginRight: '5px', textAlign: 'left' }} 
+                                                value={this.state.noRegisterFaskesKB || ''} />
+                                        </Col>
+                                        <Col md="6" xs="6" >
                                             <Input type="text" 
                                                 readOnly={this.state.noJaringanFaskesKB_RO}
                                                 ref={c => (this.Text_noJaringanJejaring = c)}
@@ -658,11 +691,21 @@ class Step1 extends Component {
                                                 style={{ marginRight: '5px', textAlign: 'left' }} />
                                         </Col>
                                     </Row>
+
                                     <Row style={{ marginTop: '15px' }}>                                               
                                         <Col md="4" xs="12" >
-                                            <Label>Lokasi</Label>
+                                            <Label>Nama Faskes</Label>
                                         </Col>
-                                        <Col md="6" xs="12" >
+                                        <Col md="8" xs="12" >
+                                            <Input type="text" readOnly={this.state.namaTempatKB_RO} id="jalan" name="jalan" value={this.state.namaTempatPelayananKB} onChange={this.handleChange} />
+                                            <span style={{color: "red"}}>{this.state.errors["namaTempatPelayananKB"]}</span>
+                                        </Col>
+                                    </Row>
+                                    <Row style={{ marginTop: '15px' }}>                                               
+                                        <Col md="4" xs="12" >
+                                            <Label>Alamat</Label>
+                                        </Col>
+                                        <Col md="8" xs="12" >
                                             <Input type="text" readOnly={this.state.namaTempatKB_RO} id="jalan" name="jalan" value={this.state.jalan} onChange={this.handleChange} />
                                             <span style={{color: "red"}}>{this.state.errors["jalan"]}</span>
                                         </Col>
@@ -672,10 +715,10 @@ class Step1 extends Component {
                                         <Col md="4" xs="12" >
                                             <Label>Jenis</Label>
                                         </Col>
-                                        <Col md="3" xs="12" >
+                                        <Col md="4" xs="12" >
                                             <Select id="jenisFaskesKB" name="jenisFaskesKB" options={this.state.show_jenisFaskesKb} onChange={this.changeSel1} placeholder="Jenis Faskes KB" value={this.state.select1} isDisabled={this.state.hidden_jenisFaskesKb} isClearable />
                                         </Col>
-                                        <Col md="3" xs="12">
+                                        <Col md="4" xs="12">
                                             <Select id="jenisTingkatPelayanan" name="jenisTingkatPelayanan" options={this.state.show_tingkatPelayanan} onChange={this.changeSel3} placeholder="Jenis Tingkat Pelayanan" value={this.state.select3} isDisabled={this.state.hidden_tingkatPelayanan} isClearable />
                                         </Col>
                                     </Row>
@@ -683,7 +726,7 @@ class Step1 extends Component {
                                         <Col md='4'>
                                             <Label>Kepemilikan</Label>
                                         </Col>
-                                        <Col md="6">
+                                        <Col md="8">
                                             <Select id="statusKepemilikan" name="statusKepemilikan" options={this.state.statusKepemilikan} onChange={this.changeSel4} value={this.state.select4} isDisabled={this.state.hidden_statusKepemilikan} placeholder="Status Kepemilikan" isClearable />
                                         </Col>
                                     </Row>
@@ -691,7 +734,7 @@ class Step1 extends Component {
                                         <Col md="4" xs="12" >
                                             <Label>Kerjasama Dengan BPJS Kesehatan </Label>
                                         </Col>
-                                        <Col md="6" xs="12" >
+                                        <Col md="8" xs="12" >
                                             <Select options={this.state.kerjasamaBpjs} isDisabled={this.state.selKerjasamaBpjs} value={this.state.valKerjasamaBpjs} onChange={this.option4} placeholder="Kerjasama Dengan BPJS Kesehatan" isClearable />    
                                         </Col>
                                     </Row>
@@ -699,7 +742,7 @@ class Step1 extends Component {
                                         <Col md="4" xs="12" >
                                             <Label>Pelayanan Rekanalisasi </Label>
                                         </Col>
-                                        <Col md="6" xs="12" >
+                                        <Col md="8" xs="12" >
                                             <Select options={this.state.kerjasamaBpjs} isDisabled={this.state.selKerjasamaBpjs} value={this.state.valPelayananRekanalisasi} onChange={this.option5} placeholder="Pelayanan Rekanalisasi" isClearable />    
                                         </Col>
                                     </Row>

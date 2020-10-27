@@ -1300,6 +1300,10 @@ class Step2 extends Component {
             this.state.rowEditClick[11],
         ]
 
+        var curr = new Date();
+        curr.setDate(curr.getDate());
+        var today = curr.toISOString().substr(0,10);
+
         return (
             <>
                 <container-fluid>
@@ -1314,7 +1318,7 @@ class Step2 extends Component {
                                             <Label className="labelForm" htmlFor="text-input">Tanggal </Label>
                                         </Col>
                                         <Col xs="8" md="2">
-                                            <Input type="date" name="date" id="exampleDate" onChange={this.handleChange} value={this.state.date} />
+                                            <Input type="date" name="date" id="exampleDate" onChange={this.handleChange} defaultValue={today}></Input>
                                         </Col>
                                     </Row>
                                 </FormGroup>
@@ -1406,7 +1410,7 @@ class Step2 extends Component {
                                             <Select options={optionAlokon} isClearable={optionAlokon} onChange={this.handleAlokon} value={this.state.value_alokon} />
                                         </Col>
                                         <Col xs="4" md="2">
-                                            <Label className="labelForm">Pelayanan Bergerek</Label>
+                                            <Label className="labelForm">Yan Bergerek</Label>
                                         </Col>
                                         <Col xs="8" md="4">
                                             <Select options={optionAlokon} isClearable={optionAlokon} onChange={this.handleAlokon} value={this.state.value_alokon} />

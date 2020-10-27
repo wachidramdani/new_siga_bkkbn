@@ -9,15 +9,16 @@ const Table = React.lazy(() => import('./views/Base/Table'));
 // YAN KB PELKON
 const Pendaftaran = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/index'));
 const PendaftaranDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/daftar'));
-const RegistrasiDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/daftar'));
 const CreateYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/create/create'));
 const LihatYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/lihat/lihat'));
 const EditYankbpelkon = React.lazy(() => import('./views/Pages/yankbpelkon/pendaftaran/edit/edit'));
 const RegistrasiYAN = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/index'));
 const CreateRegistrasi = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/create/create'));
+const RegistrasiDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/daftar'));
 const EditRegistrasi = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/edit/edit'));
 const LihatRegistrasi = React.lazy(() => import('./views/Pages/yankbpelkon/registrasi/lihat/lihat'));
 const MutasiAlokon = React.lazy(() => import('./views/Pages/yankbpelkon/mutasiAlokon'));
+const AlokonDaftar = React.lazy(() => import('./views/Pages/yankbpelkon/mutasiAlokon/daftar'));
 const CreateMutasiAlokon = React.lazy(() => import('./views/Pages/yankbpelkon/mutasiAlokon/create/create'));
 const EditMutasiAlokon = React.lazy(() => import('./views/Pages/yankbpelkon/mutasiAlokon/edit/edit'));
 const LihatMutasiAlokon = React.lazy(() => import('./views/Pages/yankbpelkon/mutasiAlokon/lihat/lihat'));
@@ -165,6 +166,7 @@ const routes = [
     { path: '/pendaftaran', exact: true, name: 'Pendaftaran Tempat Pelayanan KB', component: Pendaftaran },
     { path: '/pendaftaran/daftar', name: 'Daftar Tempat Pelayanan KB', component: PendaftaranDaftar },
     { path: '/registrasi/daftar', name: 'Daftar Register KB', component: RegistrasiDaftar },
+    { path: '/alokon/daftar', name: 'Daftar Mutasi', component: AlokonDaftar },
     { path: '/pendaftaran/create', name: 'Tambah', component: CreateYankbpelkon },
     { path: '/pendaftaran/lihat', name: 'lihat', component: LihatYankbpelkon },
     { path: '/pendaftaran/edit', name: 'edit', component: EditYankbpelkon },

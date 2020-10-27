@@ -35,7 +35,19 @@ class Step3 extends Component {
         this.props.handleSaveStep(step3);
     }
 
+    
+    handleChange = (e, tab) => {
+        this.setState({
+            activeTab: tab,
+            [e.target.name]: e.target.value
+        });
+    }
+
     render() {
+        var curr = new Date();
+        curr.setDate(curr.getDate());
+        var today = curr.toISOString().substr(0,10);
+        
 
         return (
             <div>
@@ -53,7 +65,7 @@ class Step3 extends Component {
                             <Label className="labelForm" htmlFor="text-input">Tanggal</Label>
                         </Col>
                         <Col xs="8" md="4">
-                            <Input type="date" name="date" id="exampleDate" className="text-center" defaultValue={this.state.date} />
+                            <Input type="date" name="date" id="exampleDate" onChange={this.handleChange} defaultValue={today}/>
                         </Col>
                     </Row>
                     <Row>

@@ -25,13 +25,20 @@ class RekapitulasiDataKeluarga extends Component {
             tableHead: [],
             datas: [
                 { id: 1, dt1: '1', dt2: 'AMAR', dt3: 'KK', dt4: '01/01/1985', dt5: '35', dt6: '2',dt7: 'V',dt8: 'V',dt9:'V', dt10:'Y',dt11:'-',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
-                { id: 2, dt1: '', dt2: 'YULI', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'' },
-                { id: 3, dt1: '', dt2: 'ZHAFRAN', dt3: 'ANAK', dt4: '01/01/1985', dt5: '12', dt6: '', dt7: '',dt8: '',dt9:'' },
-                { id: 4, dt1: '', dt2: 'DAFFA', dt3: 'ANAK', dt4: '01/01/1985', dt5: '2', dt6: '', dt7: '',dt8: '',dt9:'' },
+
+                { id: 2, dt1: '', dt2: 'YULI', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'', dt10:'',dt11:'',dt12:'', dt13:'', dt14:'', dt15:'', dt16:'', dt17:'', dt18:'', dt19:'', dt20:'' },
+
+                { id: 3, dt1: '', dt2: 'ZHAFRAN', dt3: 'ANAK', dt4: '01/01/1985', dt5: '12', dt6: '', dt7: '',dt8: '',dt9:'', dt10:'',dt11:'',dt12:'', dt13:'', dt14:'', dt15:'', dt16:'', dt17:'', dt18:'', dt19:'', dt20:'' },
+
+                { id: 4, dt1: '', dt2: 'DAFFA', dt3: 'ANAK', dt4: '01/01/1985', dt5: '2', dt6: '', dt7: '',dt8: '',dt9:'', dt10:'',dt11:'',dt12:'', dt13:'', dt14:'', dt15:'', dt16:'', dt17:'', dt18:'', dt19:'', dt20:'' },
+
                 { id: 5, dt1: '2', dt2: 'ZULKIPLI', dt3: 'KK', dt4: '01/01/1985', dt5: '33', dt6: '0',dt7: '',dt8: 'V',dt9:'V', dt10:'Y',dt11:'-',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
-                { id: 6, dt1: '', dt2: 'YULI', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'' },
-                { id: 7, dt1: '3', dt2: 'ARDI', dt3: 'KK', dt4: '01/01/1985', dt5: '33', dt6: '0',dt7: 'V',dt8: 'V',dt9:'V', dt10: 'N',dt8: 'V',dt9:'V', dt10:'KOMDOM',dt11:'S',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
-                { id: 8, dt1: '', dt2: 'IRA', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'' },
+
+                { id: 6, dt1: '', dt2: 'YULI', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'', dt10:'',dt11:'',dt12:'', dt13:'', dt14:'', dt15:'', dt16:'', dt17:'', dt18:'', dt19:'', dt20:'' },
+
+                { id: 7, dt1: '3', dt2: 'ARDI', dt3: 'KK', dt4: '01/01/1985', dt5: '33', dt6: '0',dt7: 'V',dt8: 'V',dt9:'V', dt10:'KOMDOM',dt11:'S',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
+
+                { id: 8, dt1: '', dt2: 'IRA', dt3: 'ISTRI', dt4: '01/01/1985', dt5: '33', dt6: '', dt7: '',dt8: '',dt9:'', dt10:'',dt11:'',dt12:'', dt13:'', dt14:'', dt15:'', dt16:'', dt17:'', dt18:'', dt19:'', dt20:'' },
 
             ],
             datas2: [
@@ -75,32 +82,40 @@ class RekapitulasiDataKeluarga extends Component {
         this.setHead();
         this.setBody();
     }
-    
+
+    handleTambah = () => {
+        console.log('tambah');
+        const arr = [
+            { id: 1, dt1: '4', dt2: '', dt3: 'KK', dt4: '', dt5: '', dt6: '',dt7: '-',dt8: '-',dt9:'-', dt10:'-',dt11:'-',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
+            // { id: 4, dt1: '4', dt2: '', dt3: 'KK', dt4: '', dt5: '', dt6: '',dt7: '',dt8: '',dt9:'', dt10:'',dt11:'-',dt12:'-', dt13:'-', dt14:'-', dt15:'-', dt16:'-', dt17:'-', dt18:'-', dt19:'-', dt20:'-' },
+        ]
+        this.setState({datas: this.state.datas.concat(arr)});
+    }
     
     setHead() {
         var headerColumns = [
-        { width:"80",dataField:'dt1', title: "No. Keluarga", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt2', title: "Nama", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt3', title: "Hubungan Dengan KK", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"125",dataField:'dt4',title:"Tanggal Lahir", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"50",dataField:'dt5', title: "Usia", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt6', title: "Jumlah Anak", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt7', title: "Kesertaan JKN", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt8', title: "Status PUS", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
-        { width:"100",dataField:'dt9', title: "Status Hamil", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
+        { width:"80",dataField:'dt1', title: "No. Keluarga", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"100",dataField:'dt2', title: "Nama", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"100",dataField:'dt3', title: "Hubungan Dengan KK", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"125",dataField:'dt4',title:"Tanggal Lahir", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"50",dataField:'dt5', title: "Usia", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"100",dataField:'dt6', title: "Jumlah Anak", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"100",dataField:'dt7', title: "Kesertaan JKN", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
+        { width:"100",dataField:'dt8', title: "Status PUS", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
+        { width:"100",dataField:'dt9', title: "Status Hamil", row: '0', rowSpan: '3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
 
         { title: "KESERTAAN BER-KB PUS", row: '0', colSpan: '5', dataField: '#', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
 
-        { width:"60",dataField:'dt10', title: "PESERTA KB", row: '1',colSpan:'2', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
+        { width:"60",dataField:'dt12', title: "PESERTA KB", row: '1',colSpan:'2', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
         { width:"60",dataField:'dt11', title: "BUKAN PESERTA KB", row: '1',colSpan:'3', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
 
-        { width:"90",dataField:'dt12',title: "Metode Kontrasepsi", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"90",dataField:'dt10',title: "Metode Kontrasepsi", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
         { width:"70",dataField:'dt13' ,title: "Jalur Pembayaran", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
 
-        { width:"60",dataField:'dt14' ,title: "Ingin Anak Segera (IAS)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"60",dataField:'dt14' ,title: "Ingin Anak Segera (IAS)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
 
-        { width:"60",dataField:'dt15' ,title: "Ingin Anak Kemudian (IAK)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
-        { width:"60",dataField:'dt16' ,title: "Tidak Ingin Anak Lagi (TIAI)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'input' },
+        { width:"60",dataField:'dt15' ,title: "Ingin Anak Kemudian (IAK)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
+        { width:"60",dataField:'dt16' ,title: "Tidak Ingin Anak Lagi (TIAI)", row: '2',colSpan:'1', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'ck' },
 
         { title: "SASARAN DAN KESERTAAN DALAM POKTAN", row: '0', colSpan: '6', dataField: '#', headerAlign: POSITION.CENTER, dataAlign: POSITION.CENTER, customEdit: 'none' },
 
@@ -134,7 +149,7 @@ class RekapitulasiDataKeluarga extends Component {
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
-                    return { width: '3px' };
+                    return { width: "50" };
                 },
             },
             {
@@ -144,7 +159,7 @@ class RekapitulasiDataKeluarga extends Component {
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
-                    return { width: '5px' };
+                    return { width: "200" };
                 },
             },
             {
@@ -154,7 +169,7 @@ class RekapitulasiDataKeluarga extends Component {
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
-                    return { width: '2px' };
+                    return { width: "50"};
                 },
             },
             {
@@ -164,7 +179,7 @@ class RekapitulasiDataKeluarga extends Component {
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
-                    return { width: '2px' };
+                    return { width: "50" };
                 },
             },
             {
@@ -174,7 +189,7 @@ class RekapitulasiDataKeluarga extends Component {
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
-                    return { width: '2px' };
+                    return { width: "50" };
                 },
             },
         ]
@@ -193,7 +208,7 @@ class RekapitulasiDataKeluarga extends Component {
             {
                 dataField: 'dt2',
                 text: 'Pemerintah',
-                headerAlign: 'left',
+                headerAlign: 'center',
                 align: 'center',
                 editable: false,
                 headerStyle: (colum, colIndex) => {
@@ -244,6 +259,10 @@ class RekapitulasiDataKeluarga extends Component {
                                 </Row>  
                                 <Row>
                                     <Col md="12">
+                                    <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom:'-20px' }}>
+                                        {/* <div className="titleFilter">Wilayah : </div> */}
+                                        <button className="btn btn-facebook"  onClick={this.handleTambah}><i className="icon-file-plus"></i>Tambah</button>
+                                    </div>
                                         <div className="titleFilter">Wilayah : </div>
                                     </Col>
                                 </Row>  
@@ -279,7 +298,7 @@ class RekapitulasiDataKeluarga extends Component {
                         <div style={{marginTop:'7px'}}>
                             <strong> 3. Jumlah Peserta KB Aktif : </strong>
                         </div>
-                        <Row class ="mb-3" style={{width: '60%', marginTop:'7px'}}>
+                        <Row xs="12" class ="mb-3" style={{width: '100%', marginTop:'7px'}}>
                             <Table2Edit
                                 caption=''
                                 tableHead={columns2}

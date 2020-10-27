@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { CardBody, Col, Row, FormGroup, Label, Input } from 'reactstrap';
 import Swal from 'sweetalert2';
 import btnBack from '../../../../../assets/img/btnBack.png';
+import Select from 'react-select';
+
 
 
 class Step1 extends Component {
@@ -12,8 +14,43 @@ class Step1 extends Component {
         this.state = {
             bulan: new Date().getMonth(),
             tahun: tahun,
-            lembar: 1
+            lembar: 1,
+
+            bulan : [
+                { "value": "1", "label": "Januari" },
+                { "value": "2", "label": "Februari" },
+                { "value": "3", "label": "Maret" },
+                { "value": "4", "label": "April" },
+                { "value": "5", "label": "Mei" },
+                { "value": "6", "label": "Juni" },
+                { "value": "7", "label": "Juli" },
+                { "value": "8", "label": "Agustus" },
+                { "value": "9", "label": "September" },
+                { "value": "10", "label": "Oktober" },
+                { "value": "11", "label": "November" },
+                { "value": "12", "label": "Desember" }
+            ],
+
+            tahun : [
+                { "value": "2019", "label": "2019" },
+                { "value": "2020", "label": "2020" }
+            ],
+
+            value_bulan:null,
+            value_tahun:null,
         }
+    }
+
+    componentDidMount = () => {
+        let monthNumber = (new Date().getMonth()+1);
+        let monthNames = ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"];
+        let monthName = monthNames[monthNumber - 1];
+        let tahun = (new Date().getFullYear())
+        console.log(monthNumber,'bulan')    
+        this.setState({
+            value_bulan: [{'value':monthNumber, 'label':monthName}],
+            value_tahun: [{'value':tahun, 'label':tahun}]
+        })
     }
 
     handleNext = (event) => {
@@ -47,6 +84,18 @@ class Step1 extends Component {
                 this.props.clickBack();
             }
         });
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            value_bulan: e,   
+        })
+    }
+
+    changeTahun = (e) => {
+        this.setState({
+            value_tahun: e,   
+        })
     }
 
     render() {
@@ -94,10 +143,12 @@ class Step1 extends Component {
                                         </Col>
                                         <Col lg="4">
                                             <div style={{ float: 'left', width: '48%', marginRight: '4%' }}>
-                                                <Input type="text" id="bulan" name="bulan" className="text-center" value={bulan} disabled />
+                                                <Select options={this.state.bulan} onChange={this.handleChange} value={this.state.value_bulan} isClearable maxMenuHeight={140}/>
+                                                {/* <Input type="text" id="bulan" name="bulan" className="text-center" value={bulan} disabled /> */}
                                             </div>
                                             <div style={{ float: 'left', width: '48%' }}>
-                                                <Input type="text" id="tahun" name="tahun" className="text-center" value={this.state.tahun} disabled />
+                                                <Select options={this.state.tahun} onChange={this.changeTahun} value={this.state.value_tahun} isClearable maxMenuHeight={140}/>
+                                                {/* <Input type="text" id="tahun" name="tahun" className="text-center" value={this.state.tahun} disabled /> */}
                                             </div>
                                             <Label className="labelHeader">Bulan Lapor</Label>
                                         </Col>

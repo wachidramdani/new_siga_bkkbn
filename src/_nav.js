@@ -19,11 +19,11 @@ export default {
             url: '/register',
             icon: 'icon-man-woman',
         },
-        // {
-        //     name: 'Mutasi Alokon',
-        //     url: '/alokon',
-        //     icon: 'icon-truck',
-        // },
+            {
+                name: 'Mutasi Alokon',
+                url: '/alokon',
+                icon: 'icon-truck',
+            },
         // {
         //     title: true,
         //     name: 'DALLAP',

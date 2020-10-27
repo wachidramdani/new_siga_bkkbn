@@ -60,6 +60,10 @@ class Login extends Component {
             },
             errors: {},
             blocking: false,
+            user:[
+                {user:'kabupaten', password:'kabupaten', level:'kabupaten'},
+                {user:'kecamatan', password:'kecamatan', level:'Lhoong'}
+            ],
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -126,24 +130,18 @@ class Login extends Component {
 
         if(this.handleValidation()){
             localStorage.clear();
-            const form = {
-                username: this.state.fields.email,
-                password: this.state.fields.password,
-                idAplikasi: 2
-            }
-            this.setState({blocking: false});
-            const uname = 'clientId';
-            const ps = 'secret';
-            API011.post('auth/signin?', form, {
-                auth: {
-                    username: uname,
-                    password: ps
-                }
-            })
-            .then(res => {
-                // console.log(res)
-                this.setState({blocking: false});
-                if(res.data.accessToken.length > 0){                    
+            const username = this.state.fields.email
+            const password = this.state.fields.password
+            let level = ''
+            if (username && password) {
+                var x = 0
+                this.state.user.forEach(row => {
+                    if(username === row.user && password === row.password){
+                        level = row.level
+                        x++;
+                    }
+                });
+                if (x > 0) {
                     Swal.fire({
                         title: 'Sukses!',
                         icon: 'success',
@@ -152,50 +150,98 @@ class Login extends Component {
                         timer: 1500
                     })
                     .then(() => {
-                        API011.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
-                        API012.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
-                        API013.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
-                        API014.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
-                        API015.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
-                        localStorage.setItem('token', res.data.accessToken);
-                        localStorage.setItem('refreshToken', res.data.refreshToken);
-                        localStorage.setItem('jti', res.data.jti);
-                        localStorage.setItem('username', res.data.username);
-                        localStorage.setItem('data', JSON.stringify(res.data.authorities));                    
+                        localStorage.setItem('token', username + password);
+                        localStorage.setItem('level', level);
+                        localStorage.setItem('username', username);
                         this.props.history.push('/dashboard');
                     })
-                    // console.log(res);                    
-                }else{
+                } else {
                     Swal.fire({  
                         title: 'Peringatan',  
-                        icon: 'warning',  
-                        text: 'ID anda belum terdaftar.',  
+                        icon: 'warning',
+                        text: 'ID atau password anda salah!',  
                     });
+                    this.setState({blocking: false});
                 }
-            }).catch((error) => {
-                if(error && error.response && error.response.status === 401){
-                    Swal.fire({  
-                        title: 'Peringatan',  
-                        icon: 'warning',  
-                        text: 'Terdapat kesalahan ID atau password.',  
-                    });
-                }else{
-                    Swal.fire({  
-                        title: 'Error',  
-                        icon: 'error',  
-                        text: 'Silakan cek koneksi jaringan internet anda.',  
-                    });
-                }
-                // console.log(error.response);            
+            } else {
+                Swal.fire({  
+                    title: 'Peringatan',  
+                    icon: 'warning',
+                    text: 'Masukkan ID dan password anda.',  
+                });
                 this.setState({blocking: false});
-            });
-        }else{
-            Swal.fire({  
-                title: 'Peringatan',  
-                icon: 'warning',
-                text: 'Masukkan ID dan password anda.',  
-            });
-            this.setState({blocking: false});
+            }
+
+            // const form = {
+            //     username: this.state.fields.email,
+            //     password: this.state.fields.password,
+            //     idAplikasi: 2
+            // }
+        //     this.setState({blocking: false});
+        //     const uname = 'clientId';
+        //     const ps = 'secret';
+        //     API011.post('auth/signin?', form, {
+        //         auth: {
+        //             username: uname,
+        //             password: ps
+        //         }
+        //     })
+        //     .then(res => {
+        //         // console.log(res)
+        //         this.setState({blocking: false});
+        //         if(res.data.accessToken.length > 0){                    
+        //             Swal.fire({
+        //                 title: 'Sukses!',
+        //                 icon: 'success',
+        //                 text: 'Login Berhasil.',
+        //                 showConfirmButton: false,
+        //                 timer: 1500
+        //             })
+        //             .then(() => {
+        //                 API011.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
+        //                 API012.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
+        //                 API013.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
+        //                 API014.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
+        //                 API015.defaults.headers['Authorization'] = "Bearer "+res.data.accessToken;
+        //                 localStorage.setItem('token', res.data.accessToken);
+        //                 localStorage.setItem('refreshToken', res.data.refreshToken);
+        //                 localStorage.setItem('jti', res.data.jti);
+        //                 localStorage.setItem('username', res.data.username);
+        //                 localStorage.setItem('data', JSON.stringify(res.data.authorities));                    
+        //                 this.props.history.push('/dashboard');
+        //             })
+        //             // console.log(res);                    
+        //         }else{
+        //             Swal.fire({  
+        //                 title: 'Peringatan',  
+        //                 icon: 'warning',  
+        //                 text: 'ID anda belum terdaftar.',  
+        //             });
+        //         }
+        //     }).catch((error) => {
+        //         if(error && error.response && error.response.status === 401){
+        //             Swal.fire({  
+        //                 title: 'Peringatan',  
+        //                 icon: 'warning',  
+        //                 text: 'Terdapat kesalahan ID atau password.',  
+        //             });
+        //         }else{
+        //             Swal.fire({  
+        //                 title: 'Error',  
+        //                 icon: 'error',  
+        //                 text: 'Silakan cek koneksi jaringan internet anda.',  
+        //             });
+        //         }
+        //         // console.log(error.response);            
+        //         this.setState({blocking: false});
+        //     });
+        // }else{
+        //     Swal.fire({  
+        //         title: 'Peringatan',  
+        //         icon: 'warning',
+        //         text: 'Masukkan ID dan password anda.',  
+        //     });
+        //     this.setState({blocking: false});
         }
     }
 

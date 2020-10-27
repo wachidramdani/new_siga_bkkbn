@@ -294,18 +294,18 @@ class Dashboard extends Component {
                       <Col lg="12">
                         <span style={{fontSize:'12px', fontFamily:'cursive'}}>Menu Utama</span>
                       </Col>
-                      <Col xs="6" lg="4">
+                      <Col xs="6" lg="3">
                         {/* <div className="iclear"><i className="icon-cross3"></i></div> */}
                         <Button className="btnCardMenu"><i className="icon-office" onClick={() => this.handleClickAction('pendaftaran')}></i><div>Tempat Pelayanan KB</div></Button>
                       </Col>
-                      <Col xs="6" lg="4">
+                      <Col xs="6" lg="3">
                         {/* <div className="iclear"><i className="icon-cross3"></i></div> */}
                         <Button className="btnCardMenuRed"><i className="icon-man-woman" onClick={() => this.handleClickAction('register')}></i><div>Register Pelayanan KB</div></Button>
                       </Col>
-                      {/* <Col xs="6" lg="4">
-                        <Button className="btnCardMenuGreen"><i className="icon-truck" onClick={() => this.handleClickAction('alokon')}></i><div>Mutasi Alokon</div></Button>
-                      </Col> */}
-                      <Col xs="6" lg="4">
+                      <Col xs="6" lg="3">
+                        <Button className="btnCardMenuYellow"><i className="icon-truck" onClick={() => this.handleClickAction('alokon')}></i><div>Mutasi Alokon</div></Button>
+                      </Col>
+                      <Col xs="6" lg="3">
                         {/* <div className="iclear"><i className="icon-cross3"></i></div> */}
                         <Button className="btnCardMenuGreen"><i className="icon-clipboard3" onClick={() => this.handleClickAction('form/rekapitulasi')}></i><div>Rekapitulasi Data Keluarga</div></Button>
                       </Col>

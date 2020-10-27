@@ -21,8 +21,20 @@ class Pendaftaran extends Component {
             selectedOptionRW: [],
             selectedOptionRT: [],
             jmlFaskes: '-',
-            jmlTenaga: '-'
+            jmlTenaga: '-',
+            disabledKecamatan: false
         };
+    }
+
+    componentDidMount = () => {
+        const level = localStorage.getItem('level')
+        if (level === 'kabupaten'){
+            // console.log('cek a')
+            this.setState({disabledKecamatan: false})
+        }else {
+            // console.log('cek b')
+            this.setState({disabledKecamatan: true, selectedOptionKecamatan:[{value: '1', label: 'Lhoong'}]})
+        }
     }
 
     onChangeKecamatan = (selectedOptions) => {
@@ -171,7 +183,7 @@ class Pendaftaran extends Component {
                                             <Label className="labelForm" htmlFor="kabupaten"><b>Kecamatan</b></Label>
                                         </Col>
                                         <Col xs="8" md="9">
-                                            <Select options={opt_Kecamatan} value={this.state.selectedOptionKecamatan} onChange={this.onChangeKecamatan} placeholder="Cari" isClearable maxMenuHeight={140} />
+                                            <Select options={opt_Kecamatan} value={this.state.selectedOptionKecamatan} onChange={this.onChangeKecamatan} placeholder="Cari" isClearable maxMenuHeight={140} isDisabled={this.state.disabledKecamatan} />
                                         </Col>
                                         <Col xs="4" md="3">
                                             <Label className="labelForm" htmlFor="kabupaten"><b>Desa/Kel</b></Label>
