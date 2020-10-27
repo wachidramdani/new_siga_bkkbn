@@ -4,7 +4,7 @@ import { Card, CardBody, Col, Label, Row, Button } from 'reactstrap';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
-import mutasi from '../../../../assets/img/mutasiAlokon.PNG';
+import mutasi from '../../../../assets/img/alokon2.PNG';
 import alokon from '../../../../assets/img/alokon.PNG';
 
 class MutasiAlokon extends Component {

@@ -1461,7 +1461,7 @@ class Step2 extends Component {
                                             <Select options={this.state.ja} onChange={this.handleJenisAlokon} value={this.state.value_ja} isDisabled={this.state.disableJenisAlokon} isClearable />
                                         </Col>
                                         <Col xs="4" md="2">
-                                            <Label className="labelForm">jumlah</Label>
+                                            <Label className="labelForm">Jumlah</Label>
                                         </Col>
                                         <Col xs="8" md="4">
                                             <Input type="number" id="text-input" name="text-input" onChange={this.handleJumlah} value={this.state.jumlah} disabled={this.state.disableJumlah} />
@@ -1470,10 +1470,10 @@ class Step2 extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
-                                        <Col xs="6" md="2" lg="2" className="my-2" align="right">
+                                        <Col xs="6" md="2" lg="4" className="my-2" align="right">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Mutasi Alokon</Button>
                                         </Col>
-                                        <Col xs="6" md="2" lg="2" className="my-2">
+                                        <Col xs="6" md="2" lg="4" className="my-2">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahPeserta}><i className="icon-users2"></i> Jumlah Mutasi Alokon: <b>{this.state.jmlhPeserta}</b></Button>
                                         </Col>
                                     </Row>
