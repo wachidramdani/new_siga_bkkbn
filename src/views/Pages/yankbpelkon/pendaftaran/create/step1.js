@@ -697,7 +697,7 @@ class Step1 extends Component {
                                             <Label>Nama Faskes</Label>
                                         </Col>
                                         <Col md="8" xs="12" >
-                                            <Input type="text" readOnly={this.state.namaTempatKB_RO} id="jalan" name="jalan" value={this.state.namaTempatPelayananKB} onChange={this.handleChange} />
+                                            <Input type="text" readOnly={this.state.namaTempatKB_RO} id="NamaTempatPelayananKB" name="namaTempatPelayananKB" value={this.state.namaTempatPelayananKB} onChange={this.handleChange} />
                                             <span style={{color: "red"}}>{this.state.errors["namaTempatPelayananKB"]}</span>
                                         </Col>
                                     </Row>
