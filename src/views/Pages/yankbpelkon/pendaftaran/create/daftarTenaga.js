@@ -16,10 +16,10 @@ class DaftarTenaga extends Component {
             perPage: 6,
             currentPage: 0,
             data: [
-                {"id":1, "issue":"Petugas A","desc":"Dokter Umum", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
-                {"id":2, "issue":"Petugas B","desc":"Bidan", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
-                {"id":3, "issue":"Petugas C","desc":"Perawat", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
-                {"id":4, "issue":"Petugas D","desc":"Administrasi", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
+                {"id":1, "issue":"Mawar Melati","desc":"Dokter Umum", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
+                {"id":2, "issue":"Bulan Purnama","desc":"Bidan", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
+                {"id":3, "issue":"Angling Darma","desc":"Perawat", "date":"2020-07-14", "status": "New", "priority": "Troubleshooting", "facility":"Block A", "valtype":"Increase Production", "attapp":"Known", "atttm":"3175092502941002"},
+                {"id":4, "issue":"Mahesa Jenar","desc":"Administrasi", "date":"2020-07-13", "status": "New", "priority": "Fit For Purpose", "facility":"South Sokang", "valtype":"Reduce Cost", "attapp":"Known", "atttm":"3175092502941003"},
             ]
         }
     }

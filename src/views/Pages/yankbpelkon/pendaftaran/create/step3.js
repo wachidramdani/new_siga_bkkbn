@@ -1417,7 +1417,20 @@ class Step3 extends Component {
                         <Col xs="12" md="3" >
                             <Label htmlFor="text-input">Nomor Induk Kependudukan</Label>
                         </Col>
-                        <Col xs="10" md="7">
+                        <Col xs="12" md="9">
+                            <div className="input-group">
+                                <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
+                                <span className="input-group-btn">
+                                    <button className="btn btn-default" type="submit"
+                                        // onClick={this.toggleModal}
+                                        onClick={this.getNIK}
+                                        style={{ border: '1px solid #e4e7ea', borderTopLeftRadius: '0', borderBottomLeftRadius: '0', borderLeft: 'none' }}>
+                                        <i className="icon-search4"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </Col>
+                        {/* <Col xs="10" md="7">
                             <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                         </Col>
                         <Col xs="2" md="2">
@@ -1426,7 +1439,7 @@ class Step3 extends Component {
                             // onClick={this.toggleModal}
                             >
                             <i className="icon-search4"></i></Button>
-                        </Col>
+                        </Col> */}
                     </Row>
                     <Row className="mt-2">
                         <Col xs="12" md="3">

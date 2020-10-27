@@ -698,20 +698,14 @@ class Step2 extends Component {
         })
     }
 
-    callData = (e) => {
+    callData = (e) =>{
         if (e.keyCode === 13) {
             this.setState({
-                show_dataPenduduk: this.state.dataKeluarga.filter(item => item.nik === e.target.value),
-                show_dataNonBDKI: this.state.dataNonBdki.filter(item => item.nik === e.target.value),
+                show_dataPenduduk: this.state.dataPenduduk.filter(item => item.nik === e.target.value)
             })
-        }
-        this.setState({
-            namaPeserta: this.state.show_dataPenduduk.nama ? this.state.show_dataPenduduk.nama : this.state.show_dataNonBDKI.nama_lengkap,
-            kkiPeserta: this.state.show_dataPenduduk.kki ? this.state.show_dataPenduduk.kki : this.state.show_dataNonBDKI.kki
-        })
-        console.log("nama nya adalah : ", this.state.show_dataPenduduk.nama)
+          }
+        
     }
-
     handlePageChange = (page, sizePerPage) => {
         this.setState({ currentPage: page, sizePerPage: sizePerPage })
     }
@@ -785,7 +779,19 @@ class Step2 extends Component {
 
     simpan = () => {
         this.setState({
-            jmlhPeserta: this.state.jmlhPeserta + 1
+            jmlhPeserta: this.state.jmlhPeserta + 1,
+            date: '',
+            nikPeserta: '',
+            kkiPeserta: '',
+            namaPeserta: '',
+            alamat:'',
+            noHp:'',
+            value_jk: null,
+            value_keluhan: null,
+            value_jt: null,
+            value_asuransi: null,
+            value_alokon: null, 
+            btnEdit: false
         })
     }
 
@@ -810,6 +816,19 @@ class Step2 extends Component {
     toggleBdki = () => {
         this.setState({ listBdkiModal: !this.state.listBdkiModal })
     };
+
+    getNIK = () => {
+        this.setState({
+            namaPeserta: 'Mawar Melati',
+            alamat: 'Jalan Merdeka No. 81',
+            noHp: '081982902500'
+        })
+    }
+
+    onInputNik = (e) =>{
+        e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,16)
+        
+    }
 
     render() {
 
@@ -1306,6 +1325,17 @@ class Step2 extends Component {
                                         </Col>
                                         <Col xs="8" md="4">
                                             <div className="input-group">
+                                                <Input type="number" id="input-nik" onInput={this.handleNikChange} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
+                                                <span className="input-group-btn">
+                                                    <button className="btn btn-default" type="submit"
+                                                        // onClick={this.toggleModal}
+                                                        onClick={this.getNIK}
+                                                        style={{ border: '1px solid #e4e7ea', borderTopLeftRadius: '0', borderBottomLeftRadius: '0', borderLeft: 'none' }}>
+                                                        <i className="icon-search4"></i>
+                                                    </button>
+                                                </span>
+                                            </div>
+                                            {/* <div className="input-group">
                                                 <input type="text" className="form-control" placeholder="Nomor Induk Kependudukan" name="nikPeserta" value={this.state.nikPeserta} onChange={this.handleNikChange} onKeyDown={this.callData} />
                                                 <span className="input-group-btn">
                                                     <button className="btn btn-default" type="submit"
@@ -1315,7 +1345,7 @@ class Step2 extends Component {
                                                         <i className="icon-search4"></i>
                                                     </button>
                                                 </span>
-                                            </div>
+                                            </div> */}
                                         </Col>
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">Nama Peserta KB </Label>
@@ -1327,13 +1357,13 @@ class Step2 extends Component {
                                             <Label className="labelForm" htmlFor="text-input">Alamat </Label>
                                         </Col>
                                         <Col xs="8" md="4">
-                                            <Input type="text" value={this.state.kkiPeserta} disabled/>
+                                            <Input type="text" value={this.state.alamat} disabled/>
                                         </Col>
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">No. Handphone </Label>
                                         </Col>
                                         <Col xs="8" md="4">
-                                            <Input type="text" value={this.state.kkiPeserta} disabled/>
+                                            <Input type="text" value={this.state.noHp} disabled/>
                                         </Col>        
                                     </Row>
                                 </FormGroup>
