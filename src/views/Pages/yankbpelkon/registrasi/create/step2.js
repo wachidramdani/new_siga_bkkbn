@@ -1419,10 +1419,10 @@ class Step2 extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
-                                        <Col xs="6" md="2" lg="2" className="my-2" align="right">
+                                        <Col xs="6" md="6" className="my-2" align="right">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Peserta KB</Button>
                                         </Col>
-                                        <Col xs="6" md="2" lg="2" className="my-2">
+                                        <Col xs="6" md="6" className="my-2">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahPeserta}><i className="icon-users2"></i> Jumlah Peserta KB: <b>{this.state.jmlhPeserta}</b></Button>
                                         </Col>
                                     </Row>
