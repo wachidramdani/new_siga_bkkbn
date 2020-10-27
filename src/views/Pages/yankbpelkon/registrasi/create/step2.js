@@ -1323,7 +1323,17 @@ class Step2 extends Component {
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">NIK </Label>
                                         </Col>
-                                        <Col xs="8" md="4">
+                                        <Col xs="6" md="3">
+                                            <Input type="number" id="input-nik" onInput={this.handleNikChange} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
+                                        </Col>
+                                        <Col xs="2" md="1">
+                                            <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}
+                                            // onClick={this.handleBdki}
+                                            // onClick={this.toggleModal}
+                                            >
+                                            <i className="icon-search4"></i></Button>
+                                        </Col>
+                                        {/* <Col xs="8" md="4">
                                             <div className="input-group">
                                                 <Input type="number" id="input-nik" onInput={this.handleNikChange} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                                                 <span className="input-group-btn">
@@ -1335,18 +1345,7 @@ class Step2 extends Component {
                                                     </button>
                                                 </span>
                                             </div>
-                                            {/* <div className="input-group">
-                                                <input type="text" className="form-control" placeholder="Nomor Induk Kependudukan" name="nikPeserta" value={this.state.nikPeserta} onChange={this.handleNikChange} onKeyDown={this.callData} />
-                                                <span className="input-group-btn">
-                                                    <button className="btn btn-default" type="submit"
-                                                        // onClick={this.toggleModal}
-                                                        onClick={this.handleBdki}
-                                                        style={{ border: '1px solid #e4e7ea', borderTopLeftRadius: '0', borderBottomLeftRadius: '0', borderLeft: 'none' }}>
-                                                        <i className="icon-search4"></i>
-                                                    </button>
-                                                </span>
-                                            </div> */}
-                                        </Col>
+                                        </Col> */}
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">Nama Peserta KB </Label>
                                         </Col>
@@ -1369,57 +1368,57 @@ class Step2 extends Component {
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Jenis Kunjungan</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={this.state.show_jk} onChange={this.optionJk} value={this.state.value_jk} isClearable />
                                         </Col>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Keluhan</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={this.state.show_keluhan} onChange={this.optionKeluhan} value={this.state.value_keluhan} isClearable />
                                         </Col>
 
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Jenis Tindakan</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={this.state.show_jt} onChange={this.optionJt} value={this.state.value_jt} isClearable />
                                         </Col>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Kasus</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={this.state.showKasus} onChange={this.optionKasus} value={this.state.value_kasus} isClearable />
                                         </Col>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Jenis Asuransi</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={optionAsuransi} isClearable={optionAsuransi} onChange={this.handleAsuransi} value={this.state.value_asuransi} />
                                         </Col>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Sumber Alokon</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={optionAlokon} isClearable={optionAlokon} onChange={this.handleAlokon} value={this.state.value_alokon} />
                                         </Col>
-                                        <Col xs="4" lg="2">
+                                        <Col xs="4" md="2">
                                             <Label className="labelForm">Pelayanan Bergerek</Label>
                                         </Col>
-                                        <Col xs="8" lg="4">
+                                        <Col xs="8" md="4">
                                             <Select options={optionAlokon} isClearable={optionAlokon} onChange={this.handleAlokon} value={this.state.value_alokon} />
                                         </Col>
                                     </Row>
                                 </FormGroup>
                                 <FormGroup>
                                     <Row>
-                                        <Col xs="6" md="4" lg="4" className="my-2" align="right">
+                                        <Col xs="6" md="2" lg="2" className="my-2" align="right">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Peserta KB</Button>
                                         </Col>
-                                        <Col xs="6" md="4" lg="4" className="my-2">
+                                        <Col xs="6" md="2" lg="2" className="my-2">
                                             <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahPeserta}><i className="icon-users2"></i> Jumlah Peserta KB: <b>{this.state.jmlhPeserta}</b></Button>
                                         </Col>
                                     </Row>
