@@ -143,7 +143,10 @@ const RegistrasiMUPEN = React.lazy(() => import('./views/Pages/dallap/sarana/rog
 
 // Sarana
 const KelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb'));
+const CreateKelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb/create/create'));
 const RegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb'));
+const CreateRegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb/create/create'));
+
 
 // Administrasi
 const Umfaskes = React.lazy(() => import('./views/Pages/administrasi/Umfaskes'));
@@ -202,8 +205,11 @@ const routes = [
 
     //Kelompok Kegiatan
     { path: '/kegiatan', exact: true, name: 'Kelompok Kegiatan', component: KelompokBKB },
-    { path: '/kegiatan/kelompok_bkb', name: 'Kelompok BKB', component: KelompokBKB },
-    { path: '/kegiatan/register_bkb', name: 'Register Kegiatan BKB', component: RegisterBKB },
+    { path: '/kegiatan/kelompok_bkb',  exact: true, name: 'Kelompok BKB', component: KelompokBKB },
+    { path: '/kegiatan/kelompok_bkb/create', name: 'Tambah', component: CreateKelompokBKB },
+
+    { path: '/kegiatan/register_bkb', exact: true,  name: 'Register Kegiatan BKB', component: RegisterBKB },
+    { path: '/kegiatan/register_bkb/create', name: 'Tambah', component: CreateRegisterBKB },
 
     //Report
     { path: '/lap/dallap', exact: true, name: 'Laporan Dallap', component: DallapLaporan },

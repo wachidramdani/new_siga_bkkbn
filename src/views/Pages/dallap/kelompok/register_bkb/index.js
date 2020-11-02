@@ -1,186 +1,179 @@
 import React, { Component } from 'react';
-import { Card, CardBody, CardHeader, Col, Form, FormGroup, Input, Label, Row, Table } from 'reactstrap';
-import { Link } from 'react-router-dom';
+import { Card, CardBody, Col, Label, Row, Button } from 'reactstrap';
 
-class RegisterBKB extends Component {
+import Select from 'react-select';
+import Swal from 'sweetalert2';
+import BlockUi from 'react-block-ui';
+import registration from '../../../../../assets/img/registration.JPG';
+import cashier from '../../../../../assets/img/cashier.JPG';
+
+class RegisterBkb extends Component {
     constructor(props) {
         super(props);
-
-        this.toggle = this.toggle.bind(this);
-        this.toggleFade = this.toggleFade.bind(this);
         this.state = {
-            collapse: true,
+            open: false,
+            blocking: false,
+            status: 'Closed',
             fadeIn: true,
-            timeout: 300
+            timeout: 300,
+            selectedOptionFaskes: [],
+            noreg: '-',
+            bulan: '-',
+            jmlPelayan: '-'
         };
     }
 
-    toggle() {
-        this.setState({ collapse: !this.state.collapse });
+    onChangeFaskes = (selectedOptions) => {
+        this.setState({ 
+            selectedOptionFaskes: selectedOptions, 
+            noreg: selectedOptions ? selectedOptions.value : '-',
+            bulan: selectedOptions ? selectedOptions.bulan : '-',
+            jmlPelayan: selectedOptions ? selectedOptions.jmlPelayan : '-'
+        });
     }
 
-    toggleFade() {
-        this.setState((prevState) => { return { fadeIn: !prevState } });
+    handleClickOpen = () => {
+        this.setState({ open: true });
+        sessionStorage.setItem('nama_faskes', 'BPM Yanti Am.Keb');
+        sessionStorage.setItem('kd_prov', '11');
+        sessionStorage.setItem('kd_kab', '06');
+        sessionStorage.setItem('no_faskes', '011');
+        sessionStorage.setItem('no_jaringan', '88');
+        sessionStorage.setItem('lembar', '1');
+        sessionStorage.setItem('menyetujui_tempat', 'Aceh Besar');
+        sessionStorage.setItem('menyetujui_nama', 'Dra.Mariana Affan, MM');
+        sessionStorage.setItem('menyetujui_nip', '196306121990032002');
+        this.props.history.push('/kegiatan/register_bkb/create');
+    }
+
+    handleSeacrh = () => {
+        this.props.history.push('/registrasi/daftar');
     }
 
     render() {
+        const opt_faskes = [
+            {value: '117301506', label: 'BPM Yanti Am.Keb', bulan: 'Oktober 2020', jmlPelayan: '17'},
+            {value: '121221303', label: 'Pustu Cot Keueung', bulan: 'Juni 2020', jmlPelayan: '8'},
+            {value: '119209289', label: 'Puskesmas Lhoong', bulan: 'Juli 2020', jmlPelayan: '6'},
+            {value: '102990294', label: 'Puskesmas Lhoknga', bulan: 'September 2020', jmlPelayan: '8'},
+            {value: '118927390', label: 'Puskesmas Blang Bintang', bulan: 'Oktober 2020', jmlPelayan: '5'},
+            {value: '189482911', label: 'Puskesmas Lampisang', bulan: 'Oktober 2020', jmlPelayan: '10'},
+            {value: '119029971', label: 'RSUD Aceh Besar', bulan: 'Juli 2020', jmlPelayan: '13'},
+            {value: '112276716', label: 'KKB Indrapuri', bulan: 'Agustus 2020', jmlPelayan: '7'},
+            {value: '120994712', label: 'Puskesmas Lampupok', bulan: 'September 2020', jmlPelayan: '5'},
+            {value: '115672881', label: 'Puskesmas Mesjid Raya', bulan: 'Oktober 2020', jmlPelayan: '7'}
+        ]
+
         return (
             <div className="animated fadeIn">
-                <Row>
-                    <Col xs="12" md="12">
-                        <Card>
-                            <CardHeader>
-                                Filter Data : K/0/KB/15 Pendaftaran Tempat Pelayanan KB
-                            </CardHeader>
-                            <CardBody>
-                                <Form action="" method="post" encType="multipart/form-data" className="form-horizontal">
-                                    <Row>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="provinsi">Provinsi</Label>
-                                                <Input type="select" name="provinsi" id="provinsi">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="kabupaten">Kabupaten</Label>
-                                                <Input type="select" name="kabupaten" id="kabupaten">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="kecamatan">Kecamatan</Label>
-                                                <Input type="select" name="kecamatan" id="kecamatan">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="desa">Desa / Kel</Label>
-                                                <Input type="select" name="desa" id="desa">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="dusun">Dusun / RW</Label>
-                                                <Input type="select" name="dusun" id="dusun">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                        <Col md="4">
-                                            <FormGroup>
-                                                <Label htmlFor="rt">RT</Label>
-                                                <Input type="select" name="rt" id="rt">
-                                                    <option value="0">Please select</option>
-                                                    <option value="1">Option #1</option>
-                                                    <option value="2">Option #2</option>
-                                                    <option value="3">Option #3</option>
-                                                </Input>
-                                            </FormGroup>
-                                        </Col>
-                                    </Row>
-                                    <Row>
-                                        <Col md="11"></Col>
-                                        <Col md="1">
-                                            <a href="_blank">
-                                                <i className="cui-trash icons font-2xl d-inline"></i> Clear
-                                            </a>
-                                        </Col>
-                                    </Row>
+                <BlockUi tag="div" blocking={this.state.blocking}>
+                    <Row>
+                        <Col xs="12" md="7">
+                            <Card>
+                                <CardBody>
+                                    <div className="divTitle">
+                                        <span className="spanTitle">&#8226; Pendaftaran Kelompk Kegiatan</span>
+                                    </div>
                                     <Row>
                                         <Col md="12">
-                                            <i className="cui-monitor icons font-2xl d-inline"></i>Tempat Pelayanan KB
+                                            <Row>
+                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'0'}}>
+                                                    <img src={registration} alt=""  style={{width: '100%', height: '175px'}}/>
+                                                </Col>
+                                                <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>
+                                                    <Row>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="provinsi"><b>Provinsi</b></Label>
+                                                        </Col>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh</Label>
+                                                        </Col>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kab/Kota</b></Label>
+                                                        </Col>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">Aceh Besar</Label>
+                                                        </Col>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Kode</b></Label>
+                                                        </Col>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">11.06</Label>
+                                                        </Col>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J.Faskes</b></Label>
+                                                        </Col>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">28</Label>
+                                                        </Col>
+                                                        <Col xs="4" md="3">
+                                                            <Label className="labelForm28" htmlFor="kabupaten"><b>J.Tenaga</b></Label>
+                                                        </Col>
+                                                        <Col xs="8" md="9">
+                                                            <Label className="labelForm28" htmlFor="provinsi">75</Label>
+                                                        </Col>
+                                                    </Row>
+                                                </Col>
+                                            </Row>
                                         </Col>
                                     </Row>
-                                    <Row className="my-5">
-                                        <Col md="12" >
-                                            <Link className="ml-2 mr-4"> <i className="fa fa-refresh fa-lg d-inline mr-1"></i> Refresh</Link>
-                                            <Link className="mr-4"> <i className="fa fa-trash fa-lg d-inline mr-1"></i> Hapus</Link>
-                                            <Link className="mr-4"> <i className="fa fa-search fa-lg d-inline mr-1"></i>Lihat</Link>
-                                            <Link className="mr-4"><i className="fa fa-download fa-lg d-inline mr-1"></i>Download</Link>
-                                            <Link className="mr-4"><i className="fa fa-download fa-lg d-inline mr-1"></i>Download Wilayah</Link>
-                                            <Link className="mr-4"><i className="fa fa-file-pdf-o fa-lg d-inline mr-1"></i>Buat PDF</Link>
-                                            <Link className="mr-4"><i className="fa fa-file-pdf-o fa-lg d-inline mr-1"></i>Buat PDF Wilayah</Link>
+                                    <Row className="mt-2">
+                                        <Col xs="4" md="3">
+                                            <Label className="labelForm28" htmlFor="kabupaten"><b>Faskes</b></Label>
+                                        </Col>
+                                        <Col xs="8" md="9">
+                                            <Select options={opt_faskes} value={this.state.selectedOptionFaskes} onChange={this.onChangeFaskes} placeholder="Cari" isClearable maxMenuHeight={140} />
+                                        </Col>
+                                        <Col xs="4" md="3">
+                                            <Label className="labelForm28" htmlFor="kabupaten"><b>No Registrasi</b></Label>
+                                        </Col>
+                                        <Col xs="8" md="9">
+                                            <Label className="labelForm28" htmlFor="provinsi"><i>{this.state.noreg}</i></Label>
                                         </Col>
                                     </Row>
-                                    <Row>
+                                    <Row className="mt-2">
+                                        <Col xs="6" md="6">
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'14px', lineHeight:'33px', fontWeight: 'bold'}}>{this.state.bulan}</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Bulan Lapor Terakhir</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                        <Col xs="6" md="6">
+                                            <Card className="mb10px">
+                                                <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
+                                                    <div style={{width: '100%', textAlign: 'center'}}>
+                                                        <div style={{fontSize:'14px', lineHeight:'33px',fontWeight: 'bold'}}>{this.state.jmlPelayan}</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Pelayanan</div>
+                                                    </div>
+                                                </CardBody>
+                                            </Card>
+                                        </Col>
+                                    </Row>
+                                    <Row className="mt-3">
                                         <Col md="12">
-                                            <Table responsive striped>
-                                                <thead>
-                                                    <tr>
-                                                        <th>Kode Provinsi</th>
-                                                        <th>Kode Kabupaten</th>
-                                                        <th>Nomor Registrasi Faskes</th>
-                                                        <th>Nomor Jejaring</th>
-                                                        <th>Nama Tempat Pelayanan KB</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-                                                        <td>31</td>
-                                                        <td>22</td>
-                                                        <td>16</td>
-                                                        <td>5533</td>
-                                                        <td>Puskesmas</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>14</td>
-                                                        <td>21</td>
-                                                        <td>16</td>
-                                                        <td>9856</td>
-                                                        <td>Puskesmas</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>44</td>
-                                                        <td>15</td>
-                                                        <td>07</td>
-                                                        <td>1111</td>
-                                                        <td>Rumah Sakit</td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>12</td>
-                                                        <td>34</td>
-                                                        <td>01</td>
-                                                        <td>5467</td>
-                                                        <td>Puskesmas</td>
-                                                    </tr>
-                                                </tbody>
-                                            </Table>
+                                            <Row>
+                                                <Col xs="6" md="6">
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Pelayanan</Button>
+                                                </Col>
+                                                <Col xs="6" md="6">
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Pelayanan</Button>
+                                                </Col>
+                                            </Row>
                                         </Col>
                                     </Row>
-                                </Form>
-                            </CardBody>
-                        </Card>
-                    </Col>
-                </Row>
+                                </CardBody>
+                            </Card>
+                        </Col>
+                        <Col md="5" className="d-none d-sm-block" style={{borderLeft:"1px dashed #C8E2FF", height: "calc(100vh - 120px)", backgroundImage: `url(${cashier})`, backgroundRepeat: 'no-repeat', backgroundPosition: 'bottom center', backgroundSize: 'contain'}}></Col>
+                    </Row>
+                </BlockUi>
             </div >
         );
     }
 }
 
-export default RegisterBKB;
+export default RegisterBkb;

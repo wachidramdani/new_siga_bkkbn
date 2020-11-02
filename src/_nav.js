@@ -24,10 +24,10 @@ export default {
                 url: '/alokon',
                 icon: 'icon-truck',
             },
-        // {
-        //     title: true,
-        //     name: 'DALLAP',
-        // },
+        {
+            title: true,
+            name: 'DALLAP',
+        },
         // {
         //     name: 'Sumber Daya Manusia',
         //     url: '/sdm',
@@ -102,23 +102,63 @@ export default {
         //         },
         //     ]
         // },
-        // {
-        //     name: 'Kelompok Kegiatan',
-        //     url: '#',
-        //     icon: 'icon-microscope',
-        //     children: [
-        //         {
-        //             name: 'Kelompok BKB',
-        //             url: '/kegiatan/kelompok_bkb',
-        //             icon: 'icon-dash',
-        //         },
-        //         {
-        //             name: 'Register Kegiatan BKB',
-        //             url: '/kegiatan/register_bkb',
-        //             icon: 'icon-dash',
-        //         },
-        //     ]
-        // },
+        {
+            name: 'Kelompok Kegiatan',
+            url: '#',
+            icon: 'icon-users4',
+            children: [
+                {
+                    name: 'Kelompok BKB',
+                    url: '/kegiatan/kelompok_bkb',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Register Kegiatan BKB',
+                    url: '/kegiatan/register_bkb',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Kelompok BKR',
+                    url: '/kegiatan/kelompok_bkr',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Register Kegiatan BKR',
+                    url: '/kegiatan/register_bkr',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Kelompok BKL',
+                    url: '/kegiatan/kelompok_bkl',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Register Kegiatan BKL',
+                    url: '/kegiatan/register_bkl',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Kelompok UPPKS',
+                    url: '/kegiatan/kelompok_uppks',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Register Kegiatan UPPKS',
+                    url: '/kegiatan/register_uppks',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Kelompok PIK-R/M',
+                    url: '/kegiatan/kelompok_pikrm',
+                    icon: 'icon-dash',
+                },
+                {
+                    name: 'Register Kegiatan PIK-R/M',
+                    url: '/kegiatan/register_pikrm',
+                    icon: 'icon-dash',
+                },
+            ]
+        },
         // {
         //     title: true,
         //     name: 'Laporan',

@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
 import { Card, CardBody, Row, Col, FormGroup, Label, Input, Button, Modal, ModalHeader, ModalBody, ModalFooter, Collapse } from 'reactstrap';
 import Select from 'react-select';
-import Table2Edit from '../../../../Commons/Table/Table2Edit';
-import Table2EditNoSearch from '../../../../Commons/Table/Table2EditNoSearch';
+import Table2Edit from '../../../../../Commons/Table/Table2Edit';
+import Table2EditNoSearch from '../../../../../Commons/Table/Table2EditNoSearch';
 import { AppBar, Tab, Tabs } from '@material-ui/core';
-import API014 from '../../../../../services/API014';
-import API015 from '../../../../../services/API015';
+import API014 from '../../../../../../services/API014';
+import API015 from '../../../../../../services/API015';
 import FormInput from './formInput';
 import Swal from 'sweetalert2';
 
-import JenisKunjungan from '../../../../Commons/Json/JenisKunjungan.json'
-import Keluhan from '../../../../Commons/Json/Keluhan.json'
-import JenisTindakan from '../../../../Commons/Json/JenisTindakan.json'
+import JenisKunjungan from '../../../../../Commons/Json/JenisKunjungan.json'
+import Keluhan from '../../../../../Commons/Json/Keluhan.json'
+import JenisTindakan from '../../../../../Commons/Json/JenisTindakan.json'
 
 import DaftarPeserta from './daftarPeserta';
-import ListBdki from '../../pendaftaran/create/listBdki';
+import ListBdki from '../../../../yankbpelkon/pendaftaran/create/listBdki';
 
 
 
