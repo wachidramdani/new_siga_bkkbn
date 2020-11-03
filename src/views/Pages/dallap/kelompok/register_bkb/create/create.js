@@ -19,7 +19,7 @@ class CreateRegistrasi extends Component {
     }
 
     clickBack = () => {
-        this.props.history.push('/register');
+        this.props.history.push('/kegiatan/register_bkb');
     }
 
     handleValueStep = (step, value) => {

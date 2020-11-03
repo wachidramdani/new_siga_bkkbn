@@ -1345,25 +1345,10 @@ class Step2 extends Component {
                                             <Input type="number" id="input-nik" onInput={this.handleNikChange} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                                         </Col>
                                         <Col xs="2" md="1">
-                                            <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}
-                                            // onClick={this.handleBdki}
-                                            // onClick={this.toggleModal}
-                                            >
+                                            <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}>  
                                             <i className="icon-search4"></i></Button>
                                         </Col>
-                                        {/* <Col xs="8" md="4">
-                                            <div className="input-group">
-                                                <Input type="number" id="input-nik" onInput={this.handleNikChange} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
-                                                <span className="input-group-btn">
-                                                    <button className="btn btn-default" type="submit"
-                                                        // onClick={this.toggleModal}
-                                                        onClick={this.getNIK}
-                                                        style={{ border: '1px solid #e4e7ea', borderTopLeftRadius: '0', borderBottomLeftRadius: '0', borderLeft: 'none' }}>
-                                                        <i className="icon-search4"></i>
-                                                    </button>
-                                                </span>
-                                            </div>
-                                        </Col> */}
+                                      
                                         <Col xs="4" md="2">
                                             <Label className="labelForm" htmlFor="text-input">Nama Peserta KB </Label>
                                         </Col>
