@@ -144,6 +144,7 @@ const RegistrasiMUPEN = React.lazy(() => import('./views/Pages/dallap/sarana/rog
 // Sarana
 const KelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb'));
 const CreateKelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb/create/create'));
+const KelompokBKBDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb/daftar'));
 const RegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb'));
 const CreateRegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb/create/create'));
 const KelompokPIK = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_pik'));
@@ -211,8 +212,12 @@ const routes = [
     { path: '/kegiatan', exact: true, name: 'Kelompok Kegiatan', component: KelompokBKB },
     { path: '/kegiatan/kelompok_bkb',  exact: true, name: 'Kelompok BKB', component: KelompokBKB },
     { path: '/kegiatan/kelompok_bkb/create', name: 'Tambah', component: CreateKelompokBKB },
+<<<<<<< HEAD
     { path: '/kegiatan/kelompok_pik',  exact: true, name: 'Kelompok PIK', component: KelompokPIK },
     { path: '/kegiatan/kelompok_pik/create', name: 'Tambah', component: CreateKelompokPIK },
+=======
+    { path: '/kegiatan/kelompok_bkb/daftar', name: 'Tambah', component: KelompokBKBDaftar },
+>>>>>>> bcdd2606d5e49d9f2290a9ef87086022fedc308f
 
     { path: '/kegiatan/register_bkb', exact: true,  name: 'Register Kegiatan BKB', component: RegisterBKB },
     { path: '/kegiatan/register_bkb/create', name: 'Tambah', component: CreateRegisterBKB },

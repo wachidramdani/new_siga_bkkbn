@@ -1,105 +1,86 @@
 import React, { Component } from 'react';
-import { CardBody, Row, Col, Label, Input, Button } from 'reactstrap';
+import { CardBody, Col, Row, FormGroup, Label, Input, Collapse, Button } from 'reactstrap';
+import Select from 'react-select';
+
+
 
 class Step3 extends Component {
-
     constructor(props) {
-        var curr = new Date();
-        curr.setDate(curr.getDate());
-        var date = curr.toISOString().substr(0, 10);
-
         super(props);
         this.state = {
-            date: date
+           jmlhPengurus: 0
         }
     }
 
-    maxLengthCheck = (object) => {
-        if (object.target.value.length > object.target.maxLength) {
-            object.target.value = object.target.value.slice(0, object.target.maxLength)
-        }
+    handleNext = () => {
+        this.props.nextStep();
     }
 
-    handleSave = () => {
-        var today = new Date(this.state.date).toISOString()
-        const step3 = {
-            "menyetujuiTempat": sessionStorage.getItem('menyetujui_tempat'),
-            "menyetujuiTanggal": today,
-            "menyetujuiPimpinanNama": sessionStorage.getItem('menyetujui_nama'),
-            "menyetujuiPimpinanNIP": sessionStorage.getItem('menyetujui_nip'),
-            "created": today,
-            "createdBy": "Operatorpk.117304"
-        };
-        console.log(step3, 'tes')
-        // this.props.handleValueStep('step3', step3)
-        this.props.handleSaveStep(step3);
-    }
-
-    
-    handleChange = (e, tab) => {
+    getNIK = () => {
         this.setState({
-            activeTab: tab,
-            [e.target.name]: e.target.value
-        });
+            nama: 'Mawar Melati',
+            kki:'12356-678',
+        })
     }
 
-    render() {
-        var curr = new Date();
-        curr.setDate(curr.getDate());
-        var today = curr.toISOString().substr(0,10);
-        
+    simpan = () => {
+        this.setState({
+            jmlhPengurus: this.state.jmlhPengurus + 1
+        })
+    }
 
+
+    render() {  
         return (
             <div>
-                <h6>&nbsp; </h6>
-                <div style={{ position: 'absolute', right: '0', marginTop: '-30px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
-                <CardBody className="card-body-nopad mt-3">
+                <h6>Keluarga Anggota Kelompok Yang Hadir Dalam Pertemuan </h6>
+                <div style={{ position: 'absolute', right: '0', marginTop: '-25px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
+
+                <CardBody style={{ padding: '10px 0' }}>
                     <Row>
-                        <Col xs="4" md="2">
-                            <Label className="labelForm" htmlFor="text-input">Tempat</Label>
+                        <Col xs="12" md="3" >
+                            <Label htmlFor="text-input">Nomor Induk Kependudukan</Label>
                         </Col>
-                        <Col xs="8" md="4">
-                            <Input type="text" className="text-center" value={sessionStorage.getItem('menyetujui_tempat')} disabled />
+                        
+                        <Col xs="10" md="7">
+                            <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                         </Col>
-                        <Col xs="4" md="2">
-                            <Label className="labelForm" htmlFor="text-input">Tanggal</Label>
-                        </Col>
-                        <Col xs="8" md="4">
-                            <Input type="date" name="date" id="exampleDate" onChange={this.handleChange} defaultValue={today}/>
+                        <Col xs="2" md="2">
+                            <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}>
+                            <i className="icon-search4"></i></Button>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col xs="12" md="12">
-                            <Label className="labelForm" htmlFor="text-input">Pimpinan Faskes KB/Jaringan/Jejaring,</Label>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">Kode Keluarga Indonesia (KKI)</Label>
+                        </Col>
+                        <Col xs="12" md="9">
+                            <Input type="text" value={this.state.kki} disabled/>
                         </Col>
                     </Row>
-                    <Row>
-                        <Col xs="4" md="2">
-                            <Label className="labelForm" htmlFor="text-input">Nama</Label>
+                    <Row className="mt-2">
+                        <Col xs="12" md="3">
+                            <Label htmlFor="text-input">Nama</Label>
                         </Col>
-                        <Col xs="8" md="4">
-                            <Input type="text" className="text-center" value={sessionStorage.getItem('menyetujui_nama')} disabled />
-                        </Col>
-                        <Col xs="4" md="2">
-                            <Label className="labelForm" htmlFor="text-input">NIP</Label>
-                        </Col>
-                        <Col xs="8" md="4">
-                            <Input type="number" maxLength="18" onInput={this.maxLengthCheck} className="text-center" value={sessionStorage.getItem('menyetujui_nip')} disabled />
+                        <Col xs="12" md="9">
+                            <Input type="text" value={this.state.nama} disabled/>
                         </Col>
                     </Row>
+                    <FormGroup className="mt-3">
+                        <Row>
+                            <Col xs="6" md="6"className="my-2" align="right">
+                                <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Anggota</Button>
+                            </Col>
+                            <Col xs="6" md="6"className="my-2">
+                                <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahTenaga}><i className="icon-users2"></i> Jumlah Anggota: <b>{this.state.jmlhPengurus}</b></Button>
+                            </Col>
+                        </Row>
+                    </FormGroup>
                 </CardBody>
-                {/* Keterangan Kode:<br/>
-                (1) Penerimaan<br/>
-                (2) Pengeluaran untuk Pelayanan KB<br/>
-                (3) Pengeluaran FKTP untuk distribusi alokon ke jaringan atau jejaring<br/>
-                (4) Rusak<br/>
-                (5) Kadaluarsa */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '20px' }}>
-                    <Button className="btn btn-warning" onClick={this.props.previousStep}>Sebelumnya</Button>
-                    <div>
-                        <Button className="btn btn-danger" onClick={this.props.buttonBatal} style={{ marginRight: '10px' }}><i className="icon-x"></i> Batal</Button>
-                        <Button className="btn btn-success" onClick={this.handleSave}><i className="icon-floppy-disk"></i> Simpan</Button>
-                    </div>
+                
+                <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <button className="btn btn-warning" onClick={this.props.previousStep}>Sebelumnya</button>
+                    <button className="btn btn-info"  onClick={this.handleNext}>Selanjutnya</button>
                 </div>
             </div>
         )

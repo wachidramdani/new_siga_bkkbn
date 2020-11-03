@@ -4,8 +4,8 @@ import { Card, CardBody, Col, Label, Row, Button } from 'reactstrap';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
-import location from '../../../../../assets/img/location.png';
-import registration2 from '../../../../../assets/img/registration2.JPG';
+import location from '../../../../../assets/img/bkb1.PNG';
+import registration2 from '../../../../../assets/img/bkb2.PNG';
 
 class KelompokBKB extends Component {
     constructor(props) {
@@ -89,7 +89,7 @@ class KelompokBKB extends Component {
     }
 
     handleSeacrh = () => {
-        this.props.history.push('/pendaftaran/daftar');
+        this.props.history.push('/kegiatan/kelompok_bkb/daftar');
     }
 
     render() {
@@ -145,7 +145,7 @@ class KelompokBKB extends Component {
                             <Card>
                                 <CardBody>
                                     <div className="divTitle">
-                                        <span className="spanTitle">&#8226; Pendaftaran Kelompok Kegiatan </span>
+                                        <span className="spanTitle">&#8226; Pendaftaran POKTAN Bina Keluarga Balita (BKB) </span>
                                     </div>
                                     <Row>
                                         <Col md="12">
@@ -211,7 +211,7 @@ class KelompokBKB extends Component {
                                                 <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
                                                     <div style={{width: '100%', textAlign: 'center'}}>
                                                         <div style={{fontSize:'22px', fontWeight: 'bold'}}>{this.state.jmlFaskes}</div>
-                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Faskes</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Kelompok</div>
                                                     </div>
                                                 </CardBody>
                                             </Card>
@@ -221,7 +221,7 @@ class KelompokBKB extends Component {
                                                 <CardBody style={{backgroundColor: '#ff6961', color: 'white', borderRadius: '4px'}} className="card-body-nopad">
                                                     <div style={{width: '100%', textAlign: 'center'}}>
                                                         <div style={{fontSize:'22px', fontWeight: 'bold'}}>{this.state.jmlTenaga}</div>
-                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah Tenaga</div>
+                                                        <div style={{fontSize: '12px', color: '#333', backgroundColor: 'aliceblue'}}>Jumlah kegiatan</div>
                                                     </div>
                                                 </CardBody>
                                             </Card>
@@ -231,10 +231,10 @@ class KelompokBKB extends Component {
                                         <Col md="12">
                                             <Row>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Faskes</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Kelompok</Button>
                                                 </Col>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Faskes</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Kelompok</Button>
                                                 </Col>
                                             </Row>
                                         </Col>

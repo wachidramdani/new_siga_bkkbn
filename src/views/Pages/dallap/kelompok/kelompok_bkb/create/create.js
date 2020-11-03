@@ -6,6 +6,7 @@ import Step1 from './step1';
 import Step2 from './step2';
 import Step3 from './step3';
 import Step4 from './step4';
+import Step5 from './step5';
 import API013 from '../../../../../../services/API013';
 
 
@@ -42,6 +43,10 @@ class CreateYankbpelkon extends Component {
         }
     }
 
+    handleClickBatal = () => {
+        this.props.history.push('/kegiatan');
+    }
+
     handleSaveStep = (valueStep4) => {
         // var x= [];
         const vl1 = this.state.valueStep1;
@@ -60,7 +65,7 @@ class CreateYankbpelkon extends Component {
                     showConfirmButton: false,
                     timer: 1500
                 })
-                this.props.history.push('/pendaftaran');
+                this.props.history.push('/kegiatan');
 			}
 		})
         // console.log(this.state.valueStep1[0], 'tes step 1');
@@ -79,7 +84,7 @@ class CreateYankbpelkon extends Component {
                             <CardBody>
                                 <Row>
                                     <Col md="12">
-                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Kartu Pendaftaran Tempat Pelayanan KB</div>
+                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Kartu Pendaftaran Kelompok Kegiatan BKB</div>
                                     </Col>
                                     <Col xs="12" md="12"><hr style={{borderBottom:'1px solid orange', marginTop:'5px'}}/></Col>
                                     <Col md="12">
@@ -93,6 +98,9 @@ class CreateYankbpelkon extends Component {
                                             <Step2 handleValueStep={this.handleValueStep} />
                                             <Step3 handleValueStep={this.handleValueStep} />
                                             <Step4 handleSaveStep={this.handleSaveStep} />
+                                            <Step5 
+                                                buttonBatal={this.handleClickBatal}
+                                                handleSaveStep={this.handleSaveStep} />
                                         </StepWizard>
                                     </Col>
                                 </Row>
