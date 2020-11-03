@@ -149,12 +149,12 @@ export default {
                 },
                 {
                     name: 'Kelompok PIK-R/M',
-                    url: '/kegiatan/kelompok_pikrm',
+                    url: '/kegiatan/kelompok_pik',
                     icon: 'icon-dash',
                 },
                 {
                     name: 'Register Kegiatan PIK-R/M',
-                    url: '/kegiatan/register_pikrm',
+                    url: '/kegiatan/register_pik',
                     icon: 'icon-dash',
                 },
             ]
