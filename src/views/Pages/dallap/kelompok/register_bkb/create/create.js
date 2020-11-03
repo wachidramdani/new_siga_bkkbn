@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Step1 from './step1';
 import Step2 from './step2';
 import Step3 from './step3';
+import Step4 from './step4';
 
 import API014 from '../../../../../../services/API014';
 
@@ -53,11 +54,11 @@ class CreateRegistrasi extends Component {
                 })
 			}
         })
-        this.props.history.push('/register');
+        this.props.history.push('/kegiatan/register_bkb');
     }
 
     handleClickBatal = () => {
-        this.props.history.push('/register');
+        this.props.history.push('/kegiatan/register_bkb');
         console.log('Batal');
     }
 
@@ -71,7 +72,7 @@ class CreateRegistrasi extends Component {
                             <CardBody>
                                 <Row>
                                     <Col md="12">
-                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Tambah Data Pelayanan KB</div>
+                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Kegiatan Pertemuan Penyuluhan</div>
                                     </Col>
                                     <Col xs="12" md="12"><hr style={{ borderBottom: '1px solid orange', marginTop: '5px' }} /></Col>
                                     <Col md="12">
@@ -84,6 +85,9 @@ class CreateRegistrasi extends Component {
                                                 handleValueStep={this.handleValueStep}
                                             />
                                             <Step3
+                                                handleSaveStep={this.handleSaveStep}
+                                            />
+                                            <Step4
                                                 buttonBatal={this.handleClickBatal}
                                                 handleSaveStep={this.handleSaveStep}
                                             />

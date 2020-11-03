@@ -123,7 +123,7 @@ class Step1 extends Component {
                                     <Row>
                                         <Col lg="4">
                                             <Input type="text" className="text-center" value={sessionStorage.getItem('nama_faskes')} disabled />
-                                            <Label className="labelHeader">Nama Faskes KB/Jaringan/Jejaring</Label>
+                                            <Label className="labelHeader">Nama Kelompok Kegiatan</Label>
                                         </Col>
                                         <Col lg="4">
                                             <Input style={{ marginRight: '5px', textAlign: 'center' }} type="read-only" value={sessionStorage.getItem('kd_prov')} disabled />
@@ -134,12 +134,16 @@ class Step1 extends Component {
                                             <Label className="labelHeader">Kode Kabupaten/Kota</Label>
                                         </Col>
                                         <Col lg="4">
-                                            <Input type="number" className="text-center" value={sessionStorage.getItem('no_faskes')} disabled />
-                                            <Label className="labelHeader">No. Register Faskes KB</Label>
+                                            <Input style={{ marginRight: '5px', textAlign: 'center' }} type="read-only" value={sessionStorage.getItem('kd_kab')} disabled />
+                                            <Label className="labelHeader">Kode Kecamatan</Label>
                                         </Col>
                                         <Col lg="4">
-                                            <Input type="text" className="text-center" value={sessionStorage.getItem('no_jaringan')} disabled />
-                                            <Label className="labelHeader">No. Jaringan/Jejaring Faskes KB</Label>
+                                            <Input type="number" className="text-center" value='1' disabled />
+                                            <Label className="labelHeader">Kode Poktan</Label>
+                                        </Col>
+                                        <Col lg="4">
+                                            <Input type="text" className="text-center" value='01' disabled />
+                                            <Label className="labelHeader">No. Register Kelompok</Label>
                                         </Col>
                                         <Col lg="4">
                                             <div style={{ float: 'left', width: '48%', marginRight: '4%' }}>

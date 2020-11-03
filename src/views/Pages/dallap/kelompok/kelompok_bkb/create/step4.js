@@ -33,7 +33,7 @@ class Step4 extends Component {
     render() {  
         return (
             <div>
-                <h6>Informasi Anggota KELOMPOK </h6>
+                <h6>Informasi Anggota Kelompok </h6>
                 <div style={{ position: 'absolute', right: '0', marginTop: '-25px', marginBottom: '15px', fontSize: '12px' }}>{this.props.currentStep}/{this.props.totalSteps}</div>
 
                 <CardBody style={{ padding: '10px 0' }}>
@@ -69,10 +69,10 @@ class Step4 extends Component {
                     <FormGroup className="mt-3">
                         <Row>
                             <Col xs="6" md="6"className="my-2" align="right">
-                                <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Tenaga</Button>
+                                <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Anggota</Button>
                             </Col>
                             <Col xs="6" md="6"className="my-2">
-                                <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahTenaga}><i className="icon-users2"></i> Jumlah Tenaga: <b>{this.state.jmlhPengurus}</b></Button>
+                                <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahTenaga}><i className="icon-users2"></i> Jumlah Anggota: <b>{this.state.jmlhPengurus}</b></Button>
                             </Col>
                         </Row>
                     </FormGroup>
