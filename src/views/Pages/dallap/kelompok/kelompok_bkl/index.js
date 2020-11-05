@@ -5,7 +5,8 @@ import Select from 'react-select';
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
 import location from '../../../../../assets/img/bkb1.PNG';
-import registration2 from '../../../../../assets/img/bkb2.PNG';
+import registration2lama from '../../../../../assets/img/bkb2.PNG';
+import registration2 from '../../../../../assets/img/bkl1.jpg';
 
 class KelompokBKL extends Component {
     constructor(props) {
@@ -79,6 +80,7 @@ class KelompokBKL extends Component {
         sessionStorage.setItem('kd_des', 44045);
         sessionStorage.setItem('kd_rw', 301830);
         sessionStorage.setItem('kd_rt', 1097672);
+        sessionStorage.setItem('kd_poktan', 3);
         sessionStorage.setItem('rt', '001');
         sessionStorage.setItem('rw', '004');
         sessionStorage.setItem('desa', 'MEUNASAH KRUENG KALA');

@@ -72,7 +72,7 @@ class RegisterBkb extends Component {
                             <Card>
                                 <CardBody>
                                     <div className="divTitle">
-                                        <span className="spanTitle">&#8226; Register Kegiatan</span>
+                                        <span className="spanTitle">&#8226; Register Kegiatan BKB</span>
                                     </div>
                                     <Row>
                                         <Col md="12">

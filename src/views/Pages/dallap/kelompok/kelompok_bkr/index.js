@@ -4,7 +4,7 @@ import { Card, CardBody, Col, Label, Row, Button } from 'reactstrap';
 import Select from 'react-select';
 import Swal from 'sweetalert2';
 import BlockUi from 'react-block-ui';
-import location from '../../../../../assets/img/bkb1.PNG';
+import location from '../../../../../assets/img/kelompok_bkr1.PNG';
 import registration2 from '../../../../../assets/img/kelompok_bkr2.PNG';
 
 class KelompokBKR extends Component {
@@ -150,7 +150,7 @@ class KelompokBKR extends Component {
                                     <Row>
                                         <Col md="12">
                                             <Row>
-                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'0'}}>
+                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'20px'}}>
                                                     <img src={location} alt=""  style={{width: '100%', height: '120px'}}/>
                                                 </Col>
                                                 <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>

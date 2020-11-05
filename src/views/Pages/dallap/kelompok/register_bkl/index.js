@@ -37,7 +37,7 @@ class RegisterBkl extends Component {
         sessionStorage.setItem('nama_kelompok', 'BKL Jepun');
         sessionStorage.setItem('kd_prov', '11');
         sessionStorage.setItem('kd_kab', '06');
-        sessionStorage.setItem('kd_poktan', '1');
+        sessionStorage.setItem('kd_poktan', '3');
         sessionStorage.setItem('no_regis', '01');
         sessionStorage.setItem('lembar', '1');
         sessionStorage.setItem('menyetujui_tempat', 'Aceh Besar');
@@ -52,16 +52,12 @@ class RegisterBkl extends Component {
 
     render() {
         const opt_faskes = [
-            {value: '510207101', label: 'BKL Jepun', bulan: 'Februari 2020', jmlPelayan: '25 Februari 2020'},
-            {value: '510207102', label: 'BKL Melati', bulan: 'Juni 2020', jmlPelayan: '08 Juni 2020'},
-            {value: '510207103', label: 'BKL Anggrek', bulan: 'Juli 2020', jmlPelayan: '16 Juli 2020'},
-            {value: '510207104', label: 'BKL Jempiring', bulan: 'September 2020', jmlPelayan: '28 September 2020'},
-            {value: '510207105', label: 'BKL Mekar Sari', bulan: 'Oktober 2020', jmlPelayan: '15 Oktober 2020'},
-            {value: '510207106', label: 'BKL Sandat', bulan: 'Oktober 2020', jmlPelayan: '10 Oktober 2020'},
-            {value: '510207107', label: 'BKL Melati', bulan: 'Juli 2020', jmlPelayan: '13 Juli 2020'},
-            {value: '510207108', label: 'BKL Mitir', bulan: 'Agustus 2020', jmlPelayan: '07 Agustus 2020'},
-            {value: '510207109', label: 'BKL Tunas Mekar', bulan: 'September 2020', jmlPelayan: '15 September 2020'},
-            {value: '510207110', label: 'BKL BR Bayan', bulan: 'Oktober 2020', jmlPelayan: '12 Oktober 2020'}
+            {value: '510207101', label: 'BKL Kenanga I', bulan: 'Februari 2020', jmlPelayan: '25 Februari 2020'},
+            {value: '510207102', label: 'BKL Werda Utama', bulan: 'Juni 2020', jmlPelayan: '08 Juni 2020'},
+            {value: '510207103', label: 'BKL Batannyuh', bulan: 'Juli 2020', jmlPelayan: '16 Juli 2020'},
+            {value: '510207104', label: 'BKL Peten BeLayu', bulan: 'September 2020', jmlPelayan: '28 September 2020'},
+            {value: '510207105', label: 'BKL Br Pekilen', bulan: 'Oktober 2020', jmlPelayan: '15 Oktober 2020'},
+            {value: '510207106', label: 'BKL Werda Utama Santi', bulan: 'Oktober 2020', jmlPelayan: '10 Oktober 2020'},
         ]
 
         return (
@@ -72,7 +68,7 @@ class RegisterBkl extends Component {
                             <Card>
                                 <CardBody>
                                     <div className="divTitle">
-                                        <span className="spanTitle">&#8226; Register Kegiatan</span>
+                                        <span className="spanTitle">&#8226; Register Kegiatan BKL</span>
                                     </div>
                                     <Row>
                                         <Col md="12">

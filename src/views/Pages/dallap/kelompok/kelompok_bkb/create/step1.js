@@ -15,10 +15,12 @@ class Step1 extends Component {
             kodePoktan:'',
             noUrutRegister:'',
             namaKelompok:'',
+            lainnya:'',
             nomorSK:'',
             hidden_nomorSK: true,
             hidden_tanggal: true,
             hidden_dikeluarkanOleh: true,
+            hidden_lainnya:true,
 
             fields: {},
             errors: {},
@@ -28,6 +30,7 @@ class Step1 extends Component {
                 { value: 'PKB', label: 'PLKB' },
                 { value: 'PPKDB', label: 'PPKDB' },
                 { value: 'Sub PPKDB', label: 'Sub PPKDB' },
+                { value: 'Lainnya', label: 'Lainnya' },
             ],
             setJabatan:[],
 
@@ -97,7 +100,22 @@ class Step1 extends Component {
     }
 
     handleJabatan = (e) => {
-        this.setState({setJabatan: e})
+        console.log(e, 'target')
+        this.setState({setJabatan:e})
+        if (e) {
+            if(e.value === "Lainnya"){
+                this.setState({
+                    setJabatan:e,
+                    hidden_lainnya: false           
+                })
+            }
+        } else {
+            this.setState({
+                hidden_lainnya: true,
+                setJabatan:e
+            })
+            // }
+        }
     }
 
     handlePengukuhan = (e) => {
@@ -208,8 +226,11 @@ class Step1 extends Component {
                                         <Col xs="12" md="3">
                                             <Label htmlFor="text-input">Jabatan Pembina</Label>
                                         </Col>
-                                        <Col xs="12" md="9">
+                                        <Col xs="8" md="7">
                                             <Select options={this.state.optJabatan} onChange={this.handleJabatan} value={this.state.setJabatan} isClearable placeholder="Pilih Jabatan" maxMenuHeight={140}/>
+                                        </Col>
+                                        <Col xs="4" md="2">
+                                            <Input type="text" id="lainnya" name="lainya" value={this.state.Lainnya} onChange={this.handleChange} placeholder="Lainnya.." disabled={this.state.hidden_lainnya}/>
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>

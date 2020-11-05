@@ -42,10 +42,10 @@ class Step3 extends Component {
                             <Label htmlFor="text-input">Nomor Induk Kependudukan</Label>
                         </Col>
                         
-                        <Col xs="10" md="7">
+                        <Col xs="10" md="3">
                             <Input type="number" id="input-nik" onInput={this.onInputNik} value={this.state.nikPeserta} onKeyDown={this.callData} name="text-input" />
                         </Col>
-                        <Col xs="2" md="2">
+                        <Col xs="2" md="1">
                             <Button className="btn btn-facebook btnFilter" onClick={this.getNIK}>
                             <i className="icon-search4"></i></Button>
                         </Col>
@@ -54,7 +54,7 @@ class Step3 extends Component {
                         <Col xs="12" md="3">
                             <Label htmlFor="text-input">Kode Keluarga Indonesia (KKI)</Label>
                         </Col>
-                        <Col xs="12" md="9">
+                        <Col xs="12" md="3">
                             <Input type="text" value={this.state.kki} disabled/>
                         </Col>
                     </Row>
@@ -62,16 +62,16 @@ class Step3 extends Component {
                         <Col xs="12" md="3">
                             <Label htmlFor="text-input">Nama</Label>
                         </Col>
-                        <Col xs="12" md="9">
+                        <Col xs="12" md="3">
                             <Input type="text" value={this.state.nama} disabled/>
                         </Col>
                     </Row>
                     <FormGroup className="mt-3">
                         <Row>
-                            <Col xs="6" md="6"className="my-2" align="right">
+                            <Col xs="6" md="3"className="my-2" align="right">
                                 <Button className="btn btn-facebook btnFilter" onClick={this.simpan}><i className="icon-folder-plus"></i> Tambah Anggota</Button>
                             </Col>
-                            <Col xs="6" md="6"className="my-2">
+                            <Col xs="6" md="3"className="my-2">
                                 <Button className="btn btn-facebook btnFilter" onClick={this.handleJumlahTenaga}><i className="icon-users2"></i> Jumlah Anggota: <b>{this.state.jmlhPengurus}</b></Button>
                             </Col>
                         </Row>

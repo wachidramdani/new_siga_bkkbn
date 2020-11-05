@@ -12,7 +12,7 @@ class Step1 extends Component {
         super(props);
         this.state = {
             blocking: false,
-            kodePoktan: '',
+            // kodePoktan: '',
             noUrutRegister: '',
             namaKelompok: '',
             nomorSK: '',
@@ -28,8 +28,10 @@ class Step1 extends Component {
                 { value: 'PKB', label: 'PLKB' },
                 { value: 'PPKDB', label: 'PPKDB' },
                 { value: 'Sub PPKDB', label: 'Sub PPKDB' },
+                { value: 'Lainnya', label: 'Lainnya' },
             ],
             setJabatan: [],
+            valueJabatanLainnya: true,
 
             optPengukuhan: [
                 { value: '1', label: 'Ya' },
@@ -92,12 +94,24 @@ class Step1 extends Component {
 
     getNoRegisPembina = () => {
         this.setState({
-            namaPembina: 'Mawar Melati'
+            namaPembina: 'Mawar Melati',
+            noRegisPembina: '510201A01'
         })
     }
 
     handleJabatan = (e) => {
-        this.setState({ setJabatan: e })
+        if (e) {
+            this.setState({
+                setJabatan: e,
+                valueJabatanLainnya: (e.value !== "Lainnya") ? true : false
+            })
+        } else {
+            this.setState({
+                setJabatan: [],
+                valueJabatanLainnya: true
+            })
+        }
+        console.log("valueJabatanLainnya : " , this.state.valueJabatanLainnya)
     }
 
     handlePengukuhan = (e) => {
@@ -165,7 +179,8 @@ class Step1 extends Component {
                                                 onChange={this.handleChange}
                                                 maxLength="2"
                                                 style={{ marginRight: '5px', textAlign: 'left' }}
-                                                value={this.state.kodePoktan} />
+                                                value={sessionStorage.getItem('kd_poktan')}
+                                                readOnly />
                                         </Col>
                                         <Col md="6" xs="6" >
                                             <Input type="text"
@@ -177,10 +192,10 @@ class Step1 extends Component {
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>
-                                        <Col md="4" xs="12" >
+                                        <Col md="3" xs="12" >
                                             <Label>Nama Kelompok</Label>
                                         </Col>
-                                        <Col md="8" xs="12" >
+                                        <Col md="9" xs="12" >
                                             <Input type="text" id="NamaKelompok" name="namaKelompok" value={this.state.namaKelompok} onChange={this.handleChange} />
                                         </Col>
                                     </Row>
@@ -208,8 +223,15 @@ class Step1 extends Component {
                                         <Col xs="12" md="3">
                                             <Label htmlFor="text-input">Jabatan Pembina</Label>
                                         </Col>
-                                        <Col xs="12" md="9">
+                                        <Col xs="7" md="5">
                                             <Select options={this.state.optJabatan} onChange={this.handleJabatan} value={this.state.setJabatan} isClearable placeholder="Pilih Jabatan" maxMenuHeight={140} />
+                                        </Col>
+                                        <Col xs="5" md="4">
+                                            {/* {
+                                                (this.state.valueJabatanLainnya === "Lainnya") ? */}
+                                                    <Input type="text" value={this.state.jabatanLainnya} readOnly={this.state.valueJabatanLainnya} /> 
+                                                    {/* : <Input type="text" value="" readOnly />
+                                            } */}
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>

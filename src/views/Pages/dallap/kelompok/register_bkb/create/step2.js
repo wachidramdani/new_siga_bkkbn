@@ -14,8 +14,8 @@ class Step2 extends Component {
                 { value: 'Sub PPKDB', label: 'Sub PPKDB' },
                 { value: 'Lainnya', label: 'Lainnya' },
             ],
-            setPenyaji:[],
-            lainnya:'',
+            setPenyaji: [],
+            lainnya: '',
             hidden_lainnya: true,
 
             optMateriPenyuluhan: [
@@ -29,8 +29,10 @@ class Step2 extends Component {
                 { value: '8', label: '8. Membantu Tumbuh Kembang Balita' },
                 { value: '9', label: '9. Membentuk Karakter Anak Sejak Dini' },
                 { value: '10', label: '10. Kesehatan Reproduksi' },
+                { value: 'Lainnya', label: '10. Lainnya' },
             ],
             setMateriPenyuluhan:[],
+            hidden_lainnyaMateri: true,
 
             optKelompokUmur: [
                 { value: '1', label: '1. 0-<1 Thn' },
@@ -40,46 +42,62 @@ class Step2 extends Component {
                 { value: '5', label: '5. 4-<5 Thn' },
                 { value: '6', label: '6. 5-<6 Thn' },
             ],
-            setKelompokUmur:[],
+            setKelompokUmur: [],
 
             optDiskusi: [
                 { value: '1', label: 'Ada' },
                 { value: '2', label: 'Tidak Ada/Tanya Jawab' },
             ],
-            setDiskusi:[],
-            
+            setDiskusi: [],
+
 
         }
     }
 
     handlePenyaji = (e) => {
-        console.log(e,'target')
-        if(e){
-            if(e.label === "Lainnya"){
-                console.log('lain')
-                this.setState({
-                    hidden_lainnya: false, 
-                    setPenyaji: e               
-                })
-            }else {
-                this.setState({
-                    hidden_lainnya: true, 
-                    setPenyaji: e             
-                })
-            }
+        console.log(e, 'target')
+        if (e) {
+            // if(e.label === "Lainnya"){
+            console.log('lain')
+            this.setState({
+                setPenyaji: e,
+                hidden_lainnya: (e.filter(function (x) { return x.value == "Lainnya" })).length == 0 ? true : false
+            })
+        } else {
+            this.setState({
+                hidden_lainnya: true,
+                setPenyaji: e
+            })
+            // }
         }
+        console.log("hidden_lainnya : ", this.state.hidden_lainnya)
     }
 
     handleMateriPenyuluhan = (e) => {
-        this.setState({setMateriPenyuluhan: e})
+        console.log(e, 'target')
+        if (e) {
+            // if(e.label === "Lainnya"){
+            console.log('lain')
+            this.setState({
+                setMateriPenyuluhan: e,
+                hidden_lainnyaMateri: (e.filter(function (x) { return x.value == "Lainnya" })).length == 0 ? true : false
+            })
+        } else {
+            this.setState({
+                hidden_lainnyaMateri: true,
+                setMateriPenyuluhan: e
+            })
+            // }
+        }
+        console.log("hidden_lainnya : ", this.state.hidden_lainnya)
     }
 
     handleDiskusi = (e) => {
-        this.setState({setDiskusi: e})
+        this.setState({ setDiskusi: e })
     }
 
     handleKelompokUmur = (e) => {
-        this.setState({setKelompokUmur: e})
+        this.setState({ setKelompokUmur: e })
     }
 
 
@@ -103,16 +121,16 @@ class Step2 extends Component {
         })
     }
 
-    onInputNik = (e) =>{
-        e.target.value = Math.max(0, parseInt(e.target.value) ).toString().slice(0,16)
-        
+    onInputNik = (e) => {
+        e.target.value = Math.max(0, parseInt(e.target.value)).toString().slice(0, 16)
+
     }
 
     render() {
 
         var curr = new Date();
         curr.setDate(curr.getDate());
-        var today = curr.toISOString().substr(0,10);
+        var today = curr.toISOString().substr(0, 10);
 
         return (
             <>
@@ -136,7 +154,7 @@ class Step2 extends Component {
                                             <Label htmlFor="text-input">Penyaji/Narasumber</Label>
                                         </Col>
                                         <Col xs="8" md="6">
-                                            <Select options={this.state.optPenyaji} onChange={this.handlePenyaji} value={this.state.setPenyaji} isClearable placeholder="Penyaji/Narasumber :" maxMenuHeight={140} isMulti/>
+                                            <Select options={this.state.optPenyaji} onChange={this.handlePenyaji} value={this.state.setPenyaji} isClearable placeholder="Penyaji/Narasumber :" maxMenuHeight={140} isMulti />
                                         </Col>
                                         <Col xs="4" md="3">
                                             <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" disabled={this.state.hidden_lainnya} />
@@ -146,8 +164,11 @@ class Step2 extends Component {
                                         <Col xs="12" md="3">
                                             <Label htmlFor="text-input">Materi Penyuluhan</Label>
                                         </Col>
-                                        <Col xs="12" md="9">
+                                        <Col xs="8" md="6">
                                             <Select options={this.state.optMateriPenyuluhan} onChange={this.handleMateriPenyuluhan} value={this.state.setMateriPenyuluhan} isClearable placeholder="Materi Penyuluhan :" maxMenuHeight={140} isMulti/>
+                                        </Col>
+                                        <Col xs="4" md="3">
+                                            <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" disabled={this.state.hidden_lainnyaMateri} />
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>
@@ -155,7 +176,7 @@ class Step2 extends Component {
                                             <Label htmlFor="text-input">Kelompok Umur</Label>
                                         </Col>
                                         <Col xs="12" md="9">
-                                            <Select options={this.state.optKelompokUmur} onChange={this.handleKelompokUmur} value={this.state.setKelompokUmur} isClearable placeholder="Kelompok Umur :" maxMenuHeight={140} isMulti/>
+                                            <Select options={this.state.optKelompokUmur} onChange={this.handleKelompokUmur} value={this.state.setKelompokUmur} isClearable placeholder="Kelompok Umur :" maxMenuHeight={140} isMulti />
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>
@@ -167,11 +188,11 @@ class Step2 extends Component {
                                         </Col>
                                     </Row>
                                 </FormGroup>
-                                
+
                             </CardBody>
                         </Col>
                     </Row>
-                    
+
                     <div style={{ display: 'flex', justifyContent: 'space-between' }}>
                         <button className="btn btn-warning" onClick={this.props.previousStep}>Sebelumnya</button>
                         <button className="btn btn-info" onClick={this.handleNext}>Selanjutnya</button>

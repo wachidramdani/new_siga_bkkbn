@@ -150,7 +150,7 @@ class KelompokBKB extends Component {
                                     <Row>
                                         <Col md="12">
                                             <Row>
-                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'0'}}>
+                                                <Col xs="5" md="4 mb-2" style={{paddingRight:'20px'}}>
                                                     <img src={location} alt=""  style={{width: '100%', height: '120px'}}/>
                                                 </Col>
                                                 <Col xs="7" md="8 mb-2" style={{paddingLeft:'0'}}>

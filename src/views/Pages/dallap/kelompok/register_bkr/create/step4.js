@@ -56,13 +56,13 @@ class Step4 extends Component {
                         <Col xs="4" md="2">
                             <Label className="labelForm" htmlFor="text-input">Tempat</Label>
                         </Col>
-                        <Col xs="8" md="4">
+                        <Col xs="8" md="2">
                             <Input type="read-only" id="tempat" name="tempat" value={sessionStorage.getItem("kabupaten")} disabled/>
                         </Col>
-                        <Col xs="4" md="2">
+                        <Col xs="4" md="1">
                             <Label className="labelForm" htmlFor="text-input">Tanggal</Label>
                         </Col>
-                        <Col xs="8" md="4">
+                        <Col xs="8" md="2">
                         <Input style={{ marginRight: '5px' }} type="date" name="date" id="exampleDate" onChange={this.handleChange} defaultValue={today}></Input>
                         </Col>
                     </Row>
@@ -76,7 +76,7 @@ class Step4 extends Component {
                         <Col xs="4" md="2">
                             <Label className="labelForm" htmlFor="text-input">Nama</Label>
                         </Col>
-                        <Col xs="8" md="4">
+                        <Col xs="8" md="5">
                             <Input type="text" id="namaKepala" name="namaKepala" value={this.state.namaKepala} onChange={this.handleChange} />
                         </Col>
                     </Row>
@@ -89,7 +89,7 @@ class Step4 extends Component {
                         <Col xs="4" md="2">
                             <Label className="labelForm" htmlFor="text-input">Nama</Label>
                         </Col>
-                        <Col xs="8" md="4">
+                        <Col xs="8" md="5">
                             <Input type="text" id="namaPimpinan" name="namaPimpinan" value={this.state.namaPimpinan} onChange={this.handleChange} />
                         </Col>
                     </Row>

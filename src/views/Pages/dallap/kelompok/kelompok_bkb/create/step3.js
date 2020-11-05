@@ -96,7 +96,7 @@ class Step3 extends Component {
                             </Row>
                             <Row>
                                 <Col md="7" xs="7" style={{ paddingTop: '10px' }}>
-                                    <Label className="labelForm">Menjaga Kes. Reproduksi Balita</Label>
+                                    <Label className="labelForm">Menjaga Kesehatan Reproduksi Balita</Label>
                                 </Col>
                                 <Col md="3" xs="5" style={{ paddingTop: '10px' }}>
                                     <Select options={this.state.optBersiapMenjadiOrangTua} onChange={this.handleMemahamiPeran} value={this.state.setMemahamiPeran} isClearable maxMenuHeight={140}/>

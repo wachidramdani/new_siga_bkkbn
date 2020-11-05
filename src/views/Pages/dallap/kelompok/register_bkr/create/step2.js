@@ -38,6 +38,7 @@ class Step2 extends Component {
                 { value: '13', label: '13. Lainnya' },
             ],
             setTriadKKR:[],
+            hidden_lainnyaTriadKKR: true,
 
             optKesehatanRemaja: [
                 { value: '14', label: '14. Pubertas' },
@@ -76,16 +77,46 @@ class Step2 extends Component {
         }
     }
 
-    handlePenyaji = (e) => {
-        console.log(e,'cek')
+    changeAlokon = (e) => {
+        console.log(e, 'tes e')
         if(e){
-            if(e.value === "Lainnya"){
-                console.log('lainnya')
-                this.setState({hidden_lainnya: false, setPenyaji: e})
-            }else {
-                this.setState({hidden_lainnya: true, setPenyaji: e})
-            }
-        }   
+            this.setState({
+                value_alokon: e,
+                disableMutasiAlokon: false,
+                showMutasiAlokon: this.state.kodeMutasiAlokon.filter((x)=>e.sumberAlokon == x.sumberAlokon)
+            })
+        }else {
+            this.setState({
+                value_alokon: null,
+                disableMutasiAlokon: true,
+                showMutasiAlokon: null,
+                disableJenisAlokon: true,
+                disableJumlah: true,
+                value_ja: null,
+                jumlah:'',
+            })
+        }
+        
+    }
+
+
+    handlePenyaji = (e) => {
+        console.log(e, 'target')
+        if (e) {
+            // if(e.label === "Lainnya"){
+            console.log('lain')
+            this.setState({
+                setPenyaji: e,
+                hidden_lainnya: (e.filter(function (x) { return x.value == "Lainnya" })).length == 0 ? true : false
+            })
+        } else {
+            this.setState({
+                hidden_lainnya: true,
+                setPenyaji: e
+            })
+            // }
+        }
+        console.log("hidden_lainnya : ", this.state.hidden_lainnya)
     }
 
     handlePerencanaanKeluarga = (e) => {
@@ -93,7 +124,22 @@ class Step2 extends Component {
     }
 
     handleTriadKKR = (e) => {
-        this.setState({setTriadKKR: e})
+        console.log(e, 'target')
+        if (e) {
+            // if(e.label === "Lainnya"){
+            console.log('lain')
+            this.setState({
+                setTriadKKR: e,
+                hidden_lainnyaTriadKKR: (e.filter(function (x) { return x.value == "13" })).length == 0 ? true : false
+            })
+        } else {
+            this.setState({
+                hidden_lainnyaTriadKKR: true,
+                setTriadKKR: e
+            })
+            // }
+        }
+        console.log("hidden_lainnya : ", this.state.hidden_lainnya)
     }
 
     handleKesehatanRemaja = (e) => {
@@ -166,10 +212,10 @@ class Step2 extends Component {
                                             <Label htmlFor="text-input">Penyaji/Narasumber</Label>
                                         </Col>
                                         <Col xs="8" md="8">
-                                            <Select options={this.state.optPenyaji} onChange={this.handlePenyaji} value={this.state.setPenyaji} isClearable placeholder="Penyaji/Narasumber :" maxMenuHeight={140} isMulti/>
+                                            <Select options={this.state.optPenyaji} onChange={this.handlePenyaji} value={this.state.setPenyaji} isClearable placeholder="Penyaji/Narasumber :" maxMenuHeight={140} isMulti />
                                         </Col>
                                         <Col xs="4" md="4">
-                                            <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" placeholder="Lainnya .." />
+                                            <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" placeholder="Lainnya .." disabled={this.state.hidden_lainnya}/>
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>
@@ -179,8 +225,11 @@ class Step2 extends Component {
                                         <Col xs="12" md="12">
                                             <Select options={this.state.optPerencanaanKeluarga} onChange={this.handlePerencanaanKeluarga} value={this.state.setPerencanaanKeluarga} isClearable placeholder="Perencanaan Keluarga" maxMenuHeight={140} isMulti/>
                                         </Col>
-                                        <Col xs="12" md="12" style={{ marginTop: '5px' }}>
+                                        <Col xs="8" md="8" style={{ marginTop: '5px' }}>
                                             <Select options={this.state.optTriadKKR} onChange={this.handleTriadKKR} value={this.state.setTriadKKR} isClearable placeholder="TRIAD KKR" maxMenuHeight={140} isMulti/>
+                                        </Col>
+                                        <Col xs="4" md="4" style={{ marginTop: '5px' }}>
+                                            <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" placeholder="Lainnya .." disabled={this.state.hidden_lainnyaTriadKKR}/>
                                         </Col>
                                         <Col xs="12" md="12" style={{ marginTop: '5px' }}>
                                             <Select options={this.state.optKesehatanRemaja} onChange={this.handleKesehatanRemaja} value={this.state.setKesehatanRemaja} isClearable placeholder="Kesehatan Remaja" maxMenuHeight={140} isMulti/>

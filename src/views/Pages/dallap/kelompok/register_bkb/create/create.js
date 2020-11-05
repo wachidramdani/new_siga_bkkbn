@@ -72,7 +72,7 @@ class CreateRegistrasi extends Component {
                             <CardBody>
                                 <Row>
                                     <Col md="12">
-                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Kegiatan Pertemuan Penyuluhan</div>
+                                        <div className="titleFilter"><i className="icon-clipboard3"></i> Register Pembinaan Ketahanan Keluarga</div>
                                     </Col>
                                     <Col xs="12" md="12"><hr style={{ borderBottom: '1px solid orange', marginTop: '5px' }} /></Col>
                                     <Col md="12">
