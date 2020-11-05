@@ -177,10 +177,10 @@ class Step1 extends Component {
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>                                               
-                                        <Col md="4" xs="12" >
+                                        <Col md="3" xs="12" >
                                             <Label>Nama Kelompok</Label>
                                         </Col>
-                                        <Col md="8" xs="12" >
+                                        <Col xs="12" md="9">
                                             <Input type="text" id="NamaKelompok" name="namaKelompok" value={this.state.namaKelompok} onChange={this.handleChange} />
                                         </Col>
                                     </Row>

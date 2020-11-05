@@ -141,13 +141,38 @@ const Penyuluhan = React.lazy(() => import('./views/Pages/dallap/sarana/penyuluh
 const RegistrasiMPC = React.lazy(() => import('./views/Pages/dallap/sarana/rog-mpc'));
 const RegistrasiMUPEN = React.lazy(() => import('./views/Pages/dallap/sarana/rog-mupen'));
 
-// Sarana
+//Kegiatan BKB
 const KelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb'));
 const CreateKelompokBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb/create/create'));
 const KelompokBKBDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkb/daftar'));
 const RegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb'));
 const CreateRegisterBKB = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb/create/create'));
+const RegisterBKBDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkb/daftar'));
 
+//BKR
+const KelompokBKR = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkr'));
+const CreateKelompokBKR = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkr/create/create'));
+const KelompokBKRDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkr/daftar'));
+const RegisterBKR = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkr'));
+const CreateRegisterBKR = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkr/create/create'));
+const RegisterBKRDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkr/daftar'));
+
+//BKL
+const KelompokBKL = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkl'));
+const CreateKelompokBKL = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkl/create/create'));
+const KelompokBKLDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_bkl/daftar'));
+const RegisterBKL = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkl'));
+const CreateRegisterBKL = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkl/create/create'));
+const RegisterBKLDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/register_bkl/daftar'));
+
+
+// PIK
+const KelompokPIK = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_pik'));
+const CreateKelompokPIK = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_pik/create/create'));
+const KelompokPIKDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/kelompok_pik/daftar'));
+const RegisterPIK = React.lazy(() => import('./views/Pages/dallap/kelompok/register_pik'));
+const CreateRegisterPIK = React.lazy(() => import('./views/Pages/dallap/kelompok/register_pik/create/create'));
+const RegisterPIKDaftar = React.lazy(() => import('./views/Pages/dallap/kelompok/register_pik/daftar'));
 
 // Administrasi
 const Umfaskes = React.lazy(() => import('./views/Pages/administrasi/Umfaskes'));
@@ -204,14 +229,42 @@ const routes = [
     { path: '/sarana/rog-mupen', name: 'Register Operasional Gerak MUPEN', component: RegistrasiMUPEN },
     { path: '/sarana/rog-mpc', name: 'Register Operasional Gerak MPC', component: RegistrasiMPC },
 
-    //Kelompok Kegiatan
+    //Kelompok Kegiatan BKB
     { path: '/kegiatan', exact: true, name: 'Kelompok Kegiatan', component: KelompokBKB },
     { path: '/kegiatan/kelompok_bkb',  exact: true, name: 'Kelompok BKB', component: KelompokBKB },
     { path: '/kegiatan/kelompok_bkb/create', name: 'Tambah', component: CreateKelompokBKB },
-    { path: '/kegiatan/kelompok_bkb/daftar', name: 'Tambah', component: KelompokBKBDaftar },
+    { path: '/kegiatan/kelompok_bkb/daftar', name: 'Daftar Kelompok BKB', component: KelompokBKBDaftar },
 
     { path: '/kegiatan/register_bkb', exact: true,  name: 'Register Kegiatan BKB', component: RegisterBKB },
     { path: '/kegiatan/register_bkb/create', name: 'Tambah', component: CreateRegisterBKB },
+    { path: '/kegiatan/register_bkb/daftar', name: 'Daftar Kegiatan BKB', component: RegisterBKBDaftar },
+
+    //BKR
+    { path: '/kegiatan/kelompok_bkr',  exact: true, name: 'Kelompok BKR', component: KelompokBKR },
+    { path: '/kegiatan/kelompok_bkr/create', name: 'Tambah', component: CreateKelompokBKR },
+    { path: '/kegiatan/kelompok_bkr/daftar', name: 'Daftar Kelompok BKR', component: KelompokBKRDaftar },
+
+    { path: '/kegiatan/register_bkr', exact: true,  name: 'Register Kegiatan BKR', component: RegisterBKR },
+    { path: '/kegiatan/register_bkr/create', name: 'Tambah', component: CreateRegisterBKR },
+    { path: '/kegiatan/register_bkr/daftar', name: 'Daftar Kegiatan BKR', component: RegisterBKRDaftar },
+
+    //BKL
+    { path: '/kegiatan/kelompok_bkl',  exact: true, name: 'Kelompok BKR', component: KelompokBKL },
+    { path: '/kegiatan/kelompok_bkl/create', name: 'Tambah', component: CreateKelompokBKL },
+    { path: '/kegiatan/kelompok_bkl/daftar', name: 'Daftar Kelompok BKR', component: KelompokBKLDaftar },
+
+    { path: '/kegiatan/register_bkl', exact: true,  name: 'Register Kegiatan BKL', component: RegisterBKL },
+    { path: '/kegiatan/register_bkl/create', name: 'Tambah', component: CreateRegisterBKL },
+    { path: '/kegiatan/register_bkl/daftar', name: 'Daftar Kegiatan BKL', component: RegisterBKLDaftar },
+
+    //PIK
+    { path: '/kegiatan/kelompok_pik',  exact: true, name: 'Kelompok PIK', component: KelompokPIK },
+    { path: '/kegiatan/kelompok_pik/create', name: 'Tambah', component: CreateKelompokPIK },
+    { path: '/kegiatan/kelompok_pik/daftar', name: 'Daftar Kelompok PIK', component: KelompokPIKDaftar },
+    
+    { path: '/kegiatan/register_pik', exact: true,  name: 'Register Kegiatan PIK', component: RegisterPIK },
+    { path: '/kegiatan/register_pik/create', name: 'Tambah', component: CreateRegisterPIK },
+    { path: '/kegiatan/register_pik/daftar', name: 'Daftar Kegiatan PIK', component: RegisterPIKDaftar },
 
     //Report
     { path: '/lap/dallap', exact: true, name: 'Laporan Dallap', component: DallapLaporan },

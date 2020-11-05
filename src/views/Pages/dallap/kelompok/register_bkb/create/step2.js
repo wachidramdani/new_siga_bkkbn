@@ -12,8 +12,11 @@ class Step2 extends Component {
                 { value: 'PKB', label: 'PLKB' },
                 { value: 'PPKDB', label: 'PPKDB' },
                 { value: 'Sub PPKDB', label: 'Sub PPKDB' },
+                { value: 'Lainnya', label: 'Lainnya' },
             ],
             setPenyaji:[],
+            lainnya:'',
+            hidden_lainnya: true,
 
             optMateriPenyuluhan: [
                 { value: '1', label: '1. Bersiap Menjadi Orang Tua' },
@@ -50,7 +53,21 @@ class Step2 extends Component {
     }
 
     handlePenyaji = (e) => {
-        this.setState({setPenyaji: e})
+        console.log(e,'target')
+        if(e){
+            if(e.label === "Lainnya"){
+                console.log('lain')
+                this.setState({
+                    hidden_lainnya: false, 
+                    setPenyaji: e               
+                })
+            }else {
+                this.setState({
+                    hidden_lainnya: true, 
+                    setPenyaji: e             
+                })
+            }
+        }
     }
 
     handleMateriPenyuluhan = (e) => {
@@ -118,8 +135,11 @@ class Step2 extends Component {
                                         <Col xs="12" md="3">
                                             <Label htmlFor="text-input">Penyaji/Narasumber</Label>
                                         </Col>
-                                        <Col xs="12" md="9">
+                                        <Col xs="8" md="6">
                                             <Select options={this.state.optPenyaji} onChange={this.handlePenyaji} value={this.state.setPenyaji} isClearable placeholder="Penyaji/Narasumber :" maxMenuHeight={140} isMulti/>
+                                        </Col>
+                                        <Col xs="4" md="3">
+                                            <Input type="text" id="lainnya" value={this.state.lainnya} onChange={this.handleChange} name="lainnya" disabled={this.state.hidden_lainnya} />
                                         </Col>
                                     </Row>
                                     <Row style={{ marginTop: '15px' }}>

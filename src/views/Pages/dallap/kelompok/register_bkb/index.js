@@ -34,11 +34,11 @@ class RegisterBkb extends Component {
 
     handleClickOpen = () => {
         this.setState({ open: true });
-        sessionStorage.setItem('nama_faskes', 'BPM Yanti Am.Keb');
+        sessionStorage.setItem('nama_kelompok', 'BKB Jepun');
         sessionStorage.setItem('kd_prov', '11');
         sessionStorage.setItem('kd_kab', '06');
-        sessionStorage.setItem('no_faskes', '011');
-        sessionStorage.setItem('no_jaringan', '88');
+        sessionStorage.setItem('kd_poktan', '1');
+        sessionStorage.setItem('no_regis', '01');
         sessionStorage.setItem('lembar', '1');
         sessionStorage.setItem('menyetujui_tempat', 'Aceh Besar');
         sessionStorage.setItem('menyetujui_nama', 'Dra.Mariana Affan, MM');
@@ -47,7 +47,7 @@ class RegisterBkb extends Component {
     }
 
     handleSeacrh = () => {
-        this.props.history.push('/registrasi/daftar');
+        this.props.history.push('/kegiatan/register_bkb/daftar');
     }
 
     render() {
@@ -157,10 +157,10 @@ class RegisterBkb extends Component {
                                         <Col md="12">
                                             <Row>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Kelompok</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleClickOpen}><i className="icon-file-plus"></i> Tambah Data Kegiatan</Button>
                                                 </Col>
                                                 <Col xs="6" md="6">
-                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Kelompok</Button>
+                                                    <Button style={{width:'100%'}} className="btn btn-facebook btnFilter btn42" onClick={this.handleSeacrh}><i className="icon-search4"></i> Lihat Data Kegiatan</Button>
                                                 </Col>
                                             </Row>
                                         </Col>
