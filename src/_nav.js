@@ -137,26 +137,26 @@ export default {
                     url: '/kegiatan/register_bkl',
                     icon: 'icon-dash',
                 },
-                {
-                    name: 'Kelompok UPPKS',
-                    url: '/kegiatan/kelompok_uppks',
-                    icon: 'icon-dash',
-                },
-                {
-                    name: 'Register Kegiatan UPPKS',
-                    url: '/kegiatan/register_uppks',
-                    icon: 'icon-dash',
-                },
-                {
-                    name: 'Kelompok PIK-R/M',
-                    url: '/kegiatan/kelompok_pik',
-                    icon: 'icon-dash',
-                },
-                {
-                    name: 'Register Kegiatan PIK-R/M',
-                    url: '/kegiatan/register_pik',
-                    icon: 'icon-dash',
-                },
+                // {
+                //     name: 'Kelompok UPPKS',
+                //     url: '/kegiatan/kelompok_uppks',
+                //     icon: 'icon-dash',
+                // },
+                // {
+                //     name: 'Register Kegiatan UPPKS',
+                //     url: '/kegiatan/register_uppks',
+                //     icon: 'icon-dash',
+                // },
+                // {
+                //     name: 'Kelompok PIK-R/M',
+                //     url: '/kegiatan/kelompok_pik',
+                //     icon: 'icon-dash',
+                // },
+                // {
+                //     name: 'Register Kegiatan PIK-R/M',
+                //     url: '/kegiatan/register_pik',
+                //     icon: 'icon-dash',
+                // },
             ]
         },
         // {
